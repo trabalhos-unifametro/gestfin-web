@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gestfin_web/utils/app_colors.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Input extends StatefulWidget {
   final TextEditingController controller;
@@ -11,8 +12,13 @@ class Input extends StatefulWidget {
   final Color fontColor;
   final TextInputType type;
   final bool isObscure;
+  final double fontSize;
   final IconData? suffixIconData;
   final Function? onTapSuffixIcon;
+  final int? maxLength;
+  final double? textHintLetterSpacing;
+  final double? textLetterSpacing;
+  final TextAlign textAlign;
 
   const Input({
     super.key,
@@ -25,8 +31,13 @@ class Input extends StatefulWidget {
     this.fontColor = AppColors.primary,
     this.type = TextInputType.text,
     this.isObscure = false,
+    this.fontSize = 15,
     this.suffixIconData,
     this.onTapSuffixIcon,
+    this.maxLength,
+    this.textHintLetterSpacing,
+    this.textLetterSpacing,
+    this.textAlign = TextAlign.start
   });
 
   @override
@@ -40,20 +51,22 @@ class _InputState extends State<Input> {
     return Stack(
       children: [
         TextFormField(
+          textAlign: widget.textAlign,
+          maxLength: widget.maxLength,
           obscureText: widget.isObscure,
           enabled: widget.isEnabled,
           keyboardType: widget.type,
           cursorColor: Colors.black54,
           controller: widget.controller,
-          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w400, color: AppColors.primary),
+          style: GoogleFonts.poppins(fontSize: widget.fontSize, fontWeight: FontWeight.w400, color: AppColors.primary, letterSpacing: widget.textLetterSpacing),
           decoration: InputDecoration(
             hintText: widget.hintText,
-            hintStyle: TextStyle(fontSize: 15, fontWeight: FontWeight.w400, color: widget.fontColor),
+            hintStyle: GoogleFonts.poppins(fontSize: widget.fontSize, fontWeight: FontWeight.w400, color: widget.fontColor, letterSpacing: widget.textHintLetterSpacing),
             fillColor: widget.fillColor,
             filled: true,
             counterText: '',
             contentPadding: EdgeInsets.only(top: 8, bottom: 8, left: 20, right: widget.hasSuffix ? (widget.suffixWithBorder ? 60 : 40) : 20),
-            labelStyle: TextStyle(color: widget.fontColor, fontWeight: FontWeight.w400),
+            labelStyle: GoogleFonts.poppins(color: widget.fontColor, fontWeight: FontWeight.w400, letterSpacing: widget.textLetterSpacing),
             border: const OutlineInputBorder(
                 borderSide: BorderSide(
                   width: 0,

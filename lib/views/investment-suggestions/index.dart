@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gestfin_web/utils/app_colors.dart';
 import 'package:gestfin_web/widgets/base/BaseLayout.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class InvestmentSuggestionsPage extends StatefulWidget {
   const InvestmentSuggestionsPage({super.key});
@@ -28,14 +29,14 @@ class _InvestmentSuggestionsPageState extends State<InvestmentSuggestionsPage> {
                   fit: BoxFit.cover,
                 ),
               ),
-              child: const Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Text('Sugestões de investimento', style: TextStyle(fontSize: 25, color: AppColors.whiteSmoke, fontWeight: FontWeight.bold),),
-                  Text('Aqui vamos nos basear no seu perfil para encontrarmos os melhores investimentos', style: TextStyle(fontSize: 18, color: AppColors.whiteSmoke),),
-                  Text('de acordo com o seu gosto.', style: TextStyle(fontSize: 18, color: AppColors.whiteSmoke),),
+                  Text('Sugestões de investimento', style: GoogleFonts.poppins(fontSize: 25, color: AppColors.whiteSmoke, fontWeight: FontWeight.bold),),
+                  Text('Aqui vamos nos basear no seu perfil para encontrarmos os melhores investimentos', style: GoogleFonts.poppins(fontSize: 18, color: AppColors.whiteSmoke),),
+                  Text('de acordo com o seu gosto.', style: GoogleFonts.poppins(fontSize: 18, color: AppColors.whiteSmoke),),
                 ],
               ),
             ),

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gestfin_web/utils/app_colors.dart';
 import 'package:gestfin_web/widgets/base/Footer.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../services/session.dart';
 
@@ -47,7 +48,15 @@ class _BaseLayoutState extends State<BaseLayout> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Image.asset('images/png/logo.png', fit: BoxFit.cover, width: 220,),
+              MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  child: Image.asset('images/png/logo.png', fit: BoxFit.cover, width: 220,),
+                  onTap: () {
+                    context.go('/');
+                  },
+                ),
+              ),
               signInOrRegister()
             ],
           ),
@@ -101,12 +110,12 @@ class _BaseLayoutState extends State<BaseLayout> {
         MouseRegion(
           cursor: SystemMouseCursors.click,
           child: GestureDetector(
-            child: const Text('Entre',
-              style: TextStyle(
+            child: Text('Entre',
+              style: GoogleFonts.poppins(
                   fontSize: 15,
                   fontWeight: FontWeight.w700,
                   shadows: [
-                    Shadow(
+                    const Shadow(
                         color: AppColors.whiteSmoke,
                         offset: Offset(0, -3))
                   ],
@@ -121,16 +130,16 @@ class _BaseLayoutState extends State<BaseLayout> {
             },
           ),
         ),
-        const Text('ou', style: TextStyle(fontSize: 15, color: AppColors.whiteSmoke),),
+        Text('ou', style: GoogleFonts.poppins(fontSize: 15, color: AppColors.whiteSmoke),),
         MouseRegion(
           cursor: SystemMouseCursors.click,
           child: GestureDetector(
-            child: const Text('Cadastre-se',
-              style: TextStyle(
+            child: Text('Cadastre-se',
+              style: GoogleFonts.poppins(
                   fontSize: 15,
                   fontWeight: FontWeight.w700,
                   shadows: [
-                    Shadow(
+                    const Shadow(
                         color: AppColors.whiteSmoke,
                         offset: Offset(0, -3))
                   ],
@@ -153,19 +162,19 @@ class _BaseLayoutState extends State<BaseLayout> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text('Bem-vindo de volta,',
-          style: TextStyle(fontSize: 15, color: AppColors.whiteSmoke),
+        Text('Bem-vindo de volta,',
+          style: GoogleFonts.poppins(fontSize: 15, color: AppColors.whiteSmoke),
         ),
         DropdownButtonHideUnderline(
           child: DropdownButton2<int>(
             isExpanded: true,
-            hint: const Text('NOME DO USUÁRIO AQUI',
-              style: TextStyle(
-                overflow: TextOverflow.ellipsis,
+            hint: Text('NOME DO USUÁRIO AQUI',
+              style: GoogleFonts.poppins(
+                textStyle: const TextStyle(overflow: TextOverflow.ellipsis,),
                 fontSize: 15,
                 fontWeight: FontWeight.w700,
                 shadows: [
-                  Shadow(color: AppColors.whiteSmoke, offset: Offset(0, -3))
+                  const Shadow(color: AppColors.whiteSmoke, offset: Offset(0, -3))
                 ],
                 decorationColor: AppColors.whiteSmoke,
                 decoration: TextDecoration.underline,
@@ -179,7 +188,7 @@ class _BaseLayoutState extends State<BaseLayout> {
               child: Text(
                 items[i],
                 textAlign: TextAlign.center,
-                style: const TextStyle(
+                style: GoogleFonts.poppins(
                   fontSize: 14,
                 ),
               ),

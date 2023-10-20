@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gestfin_web/utils/app_colors.dart';
 import 'package:gestfin_web/widgets/base/BaseLayout.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -31,7 +32,7 @@ class _HomePageState extends State<HomePage> {
                 fit: BoxFit.cover,
               ),
             ),
-            child: const Column(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
@@ -40,12 +41,12 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Text('Olá, bem-vindo a ', style: TextStyle(fontSize: 25, color: AppColors.whiteSmoke),),
-                    Text('GESTFIN!', style: TextStyle(fontSize: 25, color: AppColors.whiteSmoke, fontWeight: FontWeight.bold),)
+                    Text('Olá, bem-vindo a ', style: GoogleFonts.poppins(fontSize: 25, color: AppColors.whiteSmoke),),
+                    Text('GESTFIN!', style: GoogleFonts.poppins(fontSize: 25, color: AppColors.whiteSmoke, fontWeight: FontWeight.bold),)
                   ],
                 ),
-                Text('Seu novo caminho para se organizar', style: TextStyle(fontSize: 25, color: AppColors.whiteSmoke),),
-                Text('financeiramente de maneira simples e grátis.', style: TextStyle(fontSize: 25, color: AppColors.whiteSmoke),)
+                Text('Seu novo caminho para se organizar', style: GoogleFonts.poppins(fontSize: 25, color: AppColors.whiteSmoke),),
+                Text('financeiramente de maneira simples e grátis.', style: GoogleFonts.poppins(fontSize: 25, color: AppColors.whiteSmoke),)
               ],
             ),
           ),
@@ -82,18 +83,18 @@ class _HomePageState extends State<HomePage> {
                                   colors: [AppColors.yellowGold, hoverBtn1 ? AppColors.primary.withOpacity(0.95) : AppColors.primary]
                               ),
                             ),
-                            child: const Row(
+                            child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text('Conhecer GESTFIN', style: TextStyle(color: AppColors.whiteSmoke, fontSize: 18),),
-                                    Text('Aqui você irá conhecer melhor como a GestFin', style: TextStyle(color: AppColors.whiteSmoke, fontSize: 15),),
-                                    Text('pode ajudar você a gerir suas despesas.', style: TextStyle(color: AppColors.whiteSmoke, fontSize: 15),),
+                                    Text('Conhecer GESTFIN', style: GoogleFonts.poppins(color: AppColors.whiteSmoke, fontSize: 18),),
+                                    Text('Aqui você irá conhecer melhor como a GestFin', style: GoogleFonts.poppins(color: AppColors.whiteSmoke, fontSize: 15),),
+                                    Text('pode ajudar você a gerir suas despesas.', style: GoogleFonts.poppins(color: AppColors.whiteSmoke, fontSize: 15),),
                                   ],
                                 ),
-                                Icon(Icons.chevron_right_outlined, size: 40, color: AppColors.whiteSmoke,)
+                                const Icon(Icons.chevron_right_outlined, size: 40, color: AppColors.whiteSmoke,)
                               ],
                             ),
                           ),
@@ -129,18 +130,18 @@ class _HomePageState extends State<HomePage> {
                                   colors: [AppColors.yellowGold, hoverBtn2 ? AppColors.primary.withOpacity(0.95) : AppColors.primary]
                               ),
                             ),
-                            child: const Row(
+                            child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text('Preços de ações, criptos e variações', style: TextStyle(color: AppColors.whiteSmoke, fontSize: 18),),
-                                    Text('Aqui você irá poder ver as pirncipais ações, criptos e as', style: TextStyle(color: AppColors.whiteSmoke, fontSize: 15),),
-                                    Text('variações em tempo real.', style: TextStyle(color: AppColors.whiteSmoke, fontSize: 15),),
+                                    Text('Preços de ações, criptos e variações', style: GoogleFonts.poppins(color: AppColors.whiteSmoke, fontSize: 18),),
+                                    Text('Aqui você irá poder ver as pirncipais ações, criptos e as', style: GoogleFonts.poppins(color: AppColors.whiteSmoke, fontSize: 15),),
+                                    Text('variações em tempo real.', style: GoogleFonts.poppins(color: AppColors.whiteSmoke, fontSize: 15),),
                                   ],
                                 ),
-                                Icon(Icons.chevron_right_outlined, size: 40, color: AppColors.whiteSmoke,)
+                                const Icon(Icons.chevron_right_outlined, size: 40, color: AppColors.whiteSmoke,)
                               ],
                             ),
                           ),
@@ -152,9 +153,9 @@ class _HomePageState extends State<HomePage> {
                     )
                   ],
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 20),
-                  child: Text('Nossos serviços', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: AppColors.primary),),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  child: Text('Nossos serviços', style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: AppColors.primary),),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -174,22 +175,22 @@ class _HomePageState extends State<HomePage> {
                                 fit: BoxFit.cover,
                               ),
                             ),
-                            child: const Column(
+                            child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text('Organizar despesas',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(
+                                  style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18,
                                     color: AppColors.whiteSmoke,
                                   ),
                                 ),
-                                SizedBox(height: 15,),
+                                const SizedBox(height: 15,),
                                 Text('Aqui você irá definir suas despesas do mês, e terá uma visão e dicas de como se organizar melhor.',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(
+                                  style: GoogleFonts.poppins(
                                       fontWeight: FontWeight.w100,
                                       fontSize: 14,
                                       color: AppColors.whiteSmoke
@@ -220,22 +221,22 @@ class _HomePageState extends State<HomePage> {
                                 fit: BoxFit.cover,
                               ),
                             ),
-                            child: const Column(
+                            child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text('Meus objetivos',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(
+                                  style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18,
                                     color: AppColors.whiteSmoke,
                                   ),
                                 ),
-                                SizedBox(height: 10,),
+                                const SizedBox(height: 10,),
                                 Text('Aqui você irá definir seus objetivos financeiros, e de acordo com seu perfil, vamos calcular o melhor caminho para alcançá-lo.',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(
+                                  style: GoogleFonts.poppins(
                                       fontWeight: FontWeight.w100,
                                       fontSize: 14,
                                       color: AppColors.whiteSmoke
@@ -266,22 +267,22 @@ class _HomePageState extends State<HomePage> {
                                 fit: BoxFit.cover,
                               ),
                             ),
-                            child: const Column(
+                            child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text('Sugestões de investimento',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(
+                                  style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18,
                                     color: AppColors.whiteSmoke,
                                   ),
                                 ),
-                                SizedBox(height: 10,),
+                                const SizedBox(height: 10,),
                                 Text('Aqui vamos nos basear no seu perfil para encontrarmos os melhores investimentos de acordo com o seu gosto.',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(
+                                  style: GoogleFonts.poppins(
                                       fontWeight: FontWeight.w100,
                                       fontSize: 14,
                                       color: AppColors.whiteSmoke
@@ -312,22 +313,22 @@ class _HomePageState extends State<HomePage> {
                                 fit: BoxFit.cover,
                               ),
                             ),
-                            child: const Column(
+                            child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text('50%, 30% e 20%',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(
+                                  style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18,
                                     color: AppColors.whiteSmoke,
                                   ),
                                 ),
-                                SizedBox(height: 10,),
+                                const SizedBox(height: 10,),
                                 Text('Conheça aqui o método 50, 30, 20, que serve para auxiliar na organização do seu orçamento.',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(
+                                  style: GoogleFonts.poppins(
                                       fontWeight: FontWeight.w100,
                                       fontSize: 14,
                                       color: AppColors.whiteSmoke

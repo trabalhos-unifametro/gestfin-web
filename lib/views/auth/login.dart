@@ -2,9 +2,12 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:gestfin_web/utils/app_colors.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
+import '../../widgets/components/button.dart';
 import '../../widgets/components/input.dart';
+import '../../widgets/components/select.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -24,6 +27,7 @@ class _LoginPageState extends State<LoginPage> {
   bool togglePassword = true;
   bool togglePasswordRegister = true;
   bool remember = false;
+
   final List<String> genders = [
     'Masculino',
     'Feminino'
@@ -69,6 +73,12 @@ class _LoginPageState extends State<LoginPage> {
     return Colors.white60;
   }
 
+  void onChangedSelect(String? value) {
+    setState(() {
+      selectedValue = value;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,8 +99,7 @@ class _LoginPageState extends State<LoginPage> {
               color: Colors.transparent,
               alignment: Alignment.center,
               width: MediaQuery.of(context).size.width,
-              child:
-              MouseRegion(
+              child: MouseRegion(
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   child: Image.asset('images/png/logo.png', fit: BoxFit.cover, width: 220,),
@@ -114,9 +123,9 @@ class _LoginPageState extends State<LoginPage> {
                   Expanded(
                     child: Column(
                       children: [
-                        const Padding(
-                          padding: EdgeInsets.only(top: 50),
-                          child: Text('Entre', style: TextStyle(color: Colors.white, fontSize: 20),),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 50),
+                          child: Text('Entre', style: GoogleFonts.poppins(color: Colors.white, fontSize: 20),),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(50),
@@ -165,7 +174,7 @@ class _LoginPageState extends State<LoginPage> {
                                         MouseRegion(
                                           cursor: SystemMouseCursors.click,
                                           child: GestureDetector(
-                                            child: const Text('Lembrar de mim.', style: TextStyle(fontSize: 16, color: Colors.white),),
+                                            child: Text('Lembrar de mim.', style: GoogleFonts.poppins(fontSize: 16, color: Colors.white),),
                                             onTap: () {
                                               setState(() {
                                                 remember = !remember;
@@ -178,7 +187,7 @@ class _LoginPageState extends State<LoginPage> {
                                     MouseRegion(
                                       cursor: SystemMouseCursors.click,
                                       child: GestureDetector(
-                                        child: const Text('Esqueceu sua senha?', style: TextStyle(fontSize: 16, color: Colors.white),),
+                                        child: Text('Esqueceu sua senha?', style: GoogleFonts.poppins(fontSize: 16, color: Colors.white),),
                                         onTap: () {
                                           context.go('/auth/recuperar-senha');
                                         },
@@ -187,22 +196,8 @@ class _LoginPageState extends State<LoginPage> {
                                   ],
                                 ),
                                 const SizedBox(height: 40,),
-                                MouseRegion(
-                                  cursor: SystemMouseCursors.click,
-                                  child: GestureDetector(
-                                    child: Container(
-                                      alignment: Alignment.center,
-                                      padding: const EdgeInsets.symmetric(vertical: 10),
-                                      decoration: BoxDecoration(
-                                        color: Colors.black.withOpacity(0.7),
-                                        borderRadius: BorderRadius.circular(5),
-                                      ),
-                                      child: const Text('Entrar', style: TextStyle(fontSize: 20, color: Colors.white),),
-                                    ),
-                                    onTap: () {
-                                      // Submit login
-                                    },
-                                  ),
+                                const Button(
+                                  title: 'Entrar',
                                 ),
                               ],
                             ),
@@ -219,9 +214,9 @@ class _LoginPageState extends State<LoginPage> {
                   Expanded(
                     child: Column(
                       children: [
-                        const Padding(
-                          padding: EdgeInsets.only(top: 50),
-                          child: Text('Cadastre-se', style: TextStyle(color: Colors.white, fontSize: 20),),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 50),
+                          child: Text('Cadastre-se', style: GoogleFonts.poppins(color: Colors.white, fontSize: 20),),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(50),
@@ -252,50 +247,13 @@ class _LoginPageState extends State<LoginPage> {
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Flexible(
-                                      child: DropdownButton2<String>(
-                                        isExpanded: true,
-                                        customButton: Container(
-                                          alignment: Alignment.centerLeft,
-                                          width: MediaQuery.of(context).size.width,
-                                          height: 48,
-                                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(3),
-                                            color: Colors.white.withOpacity(0.5),
-                                          ),
-                                          child: Text(selectedValue ?? 'Gênero',
-                                            style: const TextStyle(
-                                              fontSize: 15,
-                                              color: AppColors.whiteSmoke,
-                                            ),
-                                          ),
-                                        ),
-                                        value: selectedValue,
-                                        items: genders.map((String item) => DropdownMenuItem<String>(
-                                            alignment: Alignment.center,
-                                            value: item,
-                                            child: Container(
-                                              color: Colors.white60,
-                                              child: Text(
-                                                item,
-                                                style: const TextStyle(
-                                                  fontSize: 14,
-                                                ),
-                                              ),
-                                            )
-                                        )).toList(),
-                                        onChanged: (String? value) {
-                                          setState(() {
-                                            selectedValue = value;
-                                          });
-                                        },
-                                        buttonStyleData: const ButtonStyleData(
-                                          padding: EdgeInsets.symmetric(horizontal: 0),
-                                          height: 50,
-                                        ),
-                                        menuItemStyleData: const MenuItemStyleData(
-                                          height: 50,
-                                        ),
+                                      child: Select(
+                                        items: genders,
+                                        selectedValue: selectedValue,
+                                        hintText: 'Gênero',
+                                        onChanged: onChangedSelect,
+                                        fillColor: Colors.white.withOpacity(0.5),
+                                        fontColor: AppColors.whiteSmoke,
                                       ),
                                     ),
                                     const SizedBox(width: 20,),
@@ -306,27 +264,14 @@ class _LoginPageState extends State<LoginPage> {
                                         hintText: 'Data de nascimento',
                                         fontColor: AppColors.whiteSmoke,
                                         type: TextInputType.datetime,
+                                        fontSize: 13,
                                       ),
                                     )
                                   ],
                                 ),
                                 const SizedBox(height: 35,),
-                                MouseRegion(
-                                  cursor: SystemMouseCursors.click,
-                                  child: GestureDetector(
-                                    child: Container(
-                                      alignment: Alignment.center,
-                                      padding: const EdgeInsets.symmetric(vertical: 10),
-                                      decoration: BoxDecoration(
-                                        color: Colors.black.withOpacity(0.7),
-                                        borderRadius: BorderRadius.circular(5),
-                                      ),
-                                      child: const Text('Cadastrar', style: TextStyle(fontSize: 20, color: Colors.white),),
-                                    ),
-                                    onTap: () {
-                                      // Submit login
-                                    },
-                                  ),
+                                const Button(
+                                  title: 'Cadastrar',
                                 ),
                               ],
                             ),

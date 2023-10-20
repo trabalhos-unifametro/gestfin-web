@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gestfin_web/utils/app_colors.dart';
 import 'package:gestfin_web/widgets/base/BaseLayout.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import '../../widgets/components/button.dart';
+import '../../widgets/components/input.dart';
 
 class ChangePasswordPage extends StatefulWidget {
   const ChangePasswordPage({super.key});
@@ -17,7 +20,24 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
   bool toggleCurrentPassword = true;
   bool toggleNewPassword = true;
   bool toggleConfirmNewPassword = true;
-  bool hoverBtn = false;
+
+  void togglePasswordCurrent() {
+    setState(() {
+      toggleCurrentPassword = !toggleCurrentPassword;
+    });
+  }
+
+  void toggleNewPasswordFunc() {
+    setState(() {
+      toggleNewPassword = !toggleNewPassword;
+    });
+  }
+
+  void toggleConfirmNewPasswordFunc() {
+    setState(() {
+      toggleConfirmNewPassword = !toggleConfirmNewPassword;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,12 +56,12 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                   fit: BoxFit.cover,
                 ),
               ),
-              child: const Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Text('Redefinir senha', style: TextStyle(fontSize: 25, color: AppColors.whiteSmoke, fontWeight: FontWeight.bold),),
+                  Text('Redefinir senha', style: GoogleFonts.poppins(fontSize: 25, color: AppColors.whiteSmoke, fontWeight: FontWeight.bold),),
                 ],
               ),
             ),
@@ -66,213 +86,41 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          TextFormField(
-                            obscureText: toggleCurrentPassword,
-                            keyboardType: TextInputType.visiblePassword,
-                            cursorColor: Colors.black54,
+                          Input(
+                            isObscure: toggleCurrentPassword,
                             controller: currentPassword,
-                            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w400, color: AppColors.primary),
-                            decoration: InputDecoration(
-                              suffixIcon: Container(
-                                padding: const EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                  border: Border(
-                                    top: BorderSide(color: Colors.black.withOpacity(0.2), width: 1),
-                                    left: BorderSide(color: Colors.black.withOpacity(0.2), width: 1),
-                                    right: BorderSide(color: Colors.black.withOpacity(0.2), width: 1),
-                                    bottom: BorderSide(color: Colors.black.withOpacity(0.2), width: 1),
-                                  ),
-                                  borderRadius: const BorderRadius.only(
-                                    topRight: Radius.circular(5),
-                                    bottomRight: Radius.circular(5)
-                                  ),
-                                ),
-                                child: MouseRegion(
-                                  cursor: SystemMouseCursors.click,
-                                  child: GestureDetector(
-                                    child: Icon(toggleCurrentPassword ? MdiIcons.eyeOff : MdiIcons.eye, size: 20, color: Colors.black54,),
-                                    onTap: () {
-                                      setState(() {
-                                        toggleCurrentPassword = !toggleCurrentPassword;
-                                      });
-                                    },
-                                  ),
-                                ),
-                              ),
-                              hintText: 'Digite sua senha atual',
-                              hintStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.w400, color: AppColors.primary),
-                              fillColor: AppColors.whiteSmoke,
-                              filled: true,
-                              counterText: '',
-                              contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-                              labelStyle: const TextStyle(color: AppColors.primary, fontWeight: FontWeight.w400),
-                              border: const OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    width: 0,
-                                    color: Colors.transparent,
-                                  )
-                              ),
-                              enabledBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    width: 0,
-                                    color: Colors.transparent,
-                                  )
-                              ),
-                              focusedBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    width: 0,
-                                    color: Colors.transparent,
-                                  )
-                              ),
-                            ),
+                            hintText: 'Digite sua senha atual',
+                            type: TextInputType.visiblePassword,
+                            hasSuffix: true,
+                            suffixWithBorder: true,
+                            onTapSuffixIcon: togglePasswordCurrent,
+                            suffixIconData: toggleCurrentPassword ? MdiIcons.eyeOff : MdiIcons.eye,
                           ),
                           const SizedBox(height: 20,),
-                          TextFormField(
-                            obscureText: toggleNewPassword,
-                            keyboardType: TextInputType.visiblePassword,
-                            cursorColor: Colors.black54,
+                          Input(
+                            isObscure: toggleNewPassword,
                             controller: newPassword,
-                            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w400, color: AppColors.primary),
-                            decoration: InputDecoration(
-                              suffixIcon: Container(
-                                padding: const EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                  border: Border(
-                                    top: BorderSide(color: Colors.black.withOpacity(0.2), width: 1),
-                                    left: BorderSide(color: Colors.black.withOpacity(0.2), width: 1),
-                                    right: BorderSide(color: Colors.black.withOpacity(0.2), width: 1),
-                                    bottom: BorderSide(color: Colors.black.withOpacity(0.2), width: 1),
-                                  ),
-                                  borderRadius: const BorderRadius.only(
-                                      topRight: Radius.circular(5),
-                                      bottomRight: Radius.circular(5)
-                                  ),
-                                ),
-                                child: MouseRegion(
-                                  cursor: SystemMouseCursors.click,
-                                  child: GestureDetector(
-                                    child: Icon(toggleNewPassword ? MdiIcons.eyeOff : MdiIcons.eye, size: 20, color: Colors.black54,),
-                                    onTap: () {
-                                      setState(() {
-                                        toggleNewPassword = !toggleNewPassword;
-                                      });
-                                    },
-                                  ),
-                                ),
-                              ),
-                              hintText: 'Digite sua nova senha',
-                              hintStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.w400, color: AppColors.primary),
-                              fillColor: AppColors.whiteSmoke,
-                              filled: true,
-                              counterText: '',
-                              contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-                              labelStyle: const TextStyle(color: AppColors.primary, fontWeight: FontWeight.w400),
-                              border: const OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    width: 0,
-                                    color: Colors.transparent,
-                                  )
-                              ),
-                              enabledBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    width: 0,
-                                    color: Colors.transparent,
-                                  )
-                              ),
-                              focusedBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    width: 0,
-                                    color: Colors.transparent,
-                                  )
-                              ),
-                            ),
+                            hintText: 'Digite sua nova senha',
+                            type: TextInputType.visiblePassword,
+                            hasSuffix: true,
+                            suffixWithBorder: true,
+                            onTapSuffixIcon: toggleNewPasswordFunc,
+                            suffixIconData: toggleNewPassword ? MdiIcons.eyeOff : MdiIcons.eye,
                           ),
                           const SizedBox(height: 20,),
-                          TextFormField(
-                            obscureText: toggleConfirmNewPassword,
-                            keyboardType: TextInputType.visiblePassword,
-                            cursorColor: Colors.black54,
+                          Input(
+                            isObscure: toggleConfirmNewPassword,
                             controller: confirmNewPassword,
-                            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w400, color: AppColors.primary),
-                            decoration: InputDecoration(
-                              suffixIcon: Container(
-                                padding: const EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                  border: Border(
-                                    top: BorderSide(color: Colors.black.withOpacity(0.2), width: 1),
-                                    left: BorderSide(color: Colors.black.withOpacity(0.2), width: 1),
-                                    right: BorderSide(color: Colors.black.withOpacity(0.2), width: 1),
-                                    bottom: BorderSide(color: Colors.black.withOpacity(0.2), width: 1),
-                                  ),
-                                  borderRadius: const BorderRadius.only(
-                                      topRight: Radius.circular(5),
-                                      bottomRight: Radius.circular(5)
-                                  ),
-                                ),
-                                child: MouseRegion(
-                                  cursor: SystemMouseCursors.click,
-                                  child: GestureDetector(
-                                    child: Icon(toggleConfirmNewPassword ? MdiIcons.eyeOff : MdiIcons.eye, size: 20, color: Colors.black54,),
-                                    onTap: () {
-                                      setState(() {
-                                        toggleConfirmNewPassword = !toggleConfirmNewPassword;
-                                      });
-                                    },
-                                  ),
-                                ),
-                              ),
-                              hintText: 'Confirme sua nova senha',
-                              hintStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.w400, color: AppColors.primary),
-                              fillColor: AppColors.whiteSmoke,
-                              filled: true,
-                              counterText: '',
-                              contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-                              labelStyle: const TextStyle(color: AppColors.primary, fontWeight: FontWeight.w400),
-                              border: const OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    width: 0,
-                                    color: Colors.transparent,
-                                  )
-                              ),
-                              enabledBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    width: 0,
-                                    color: Colors.transparent,
-                                  )
-                              ),
-                              focusedBorder: const OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    width: 0,
-                                    color: Colors.transparent,
-                                  )
-                              ),
-                            ),
+                            hintText: 'Confirme sua nova senha',
+                            type: TextInputType.visiblePassword,
+                            hasSuffix: true,
+                            suffixWithBorder: true,
+                            onTapSuffixIcon: toggleConfirmNewPasswordFunc,
+                            suffixIconData: toggleConfirmNewPassword ? MdiIcons.eyeOff : MdiIcons.eye,
                           ),
                           const SizedBox(height: 20,),
-                          MouseRegion(
-                            cursor: SystemMouseCursors.click,
-                            onHover: (hover) {
-                              setState(() {
-                                hoverBtn = true;
-                              });
-                            },
-                            onExit: (exit) {
-                              setState(() {
-                                hoverBtn = false;
-                              });
-                            },
-                            child: GestureDetector(
-                              child: Container(
-                                alignment: Alignment.center,
-                                padding: const EdgeInsets.symmetric(vertical: 10),
-                                decoration: BoxDecoration(
-                                  color: hoverBtn ? AppColors.primary : AppColors.primary.withOpacity(0.9),
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                                child: const Text('Salvar nova senha', style: TextStyle(fontSize: 18, color: AppColors.whiteSmoke),),
-                              ),
-                              onTap: () {},
-                            ),
+                          const Button(
+                            title: 'Salvar nova senha'
                           ),
                         ],
                       ),

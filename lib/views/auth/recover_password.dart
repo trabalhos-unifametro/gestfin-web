@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gestfin_web/utils/app_colors.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+
+import '../../widgets/components/button.dart';
+import '../../widgets/components/input.dart';
 
 class RecoverPasswordPage extends StatefulWidget {
   const RecoverPasswordPage({super.key});
@@ -65,9 +69,9 @@ class _RecoverPasswordPageState extends State<RecoverPasswordPage> {
               ),
             ),
             const SizedBox(height: 80,),
-            if (indexTab == 0) Step0()
-            else if (indexTab == 1) Step1()
-            else if (indexTab == 2) Step2()
+            if (indexTab == 0) stepZero()
+            else if (indexTab == 1) stepOne()
+            else if (indexTab == 2) stepTwo()
           ],
         ),
       ),
@@ -102,7 +106,7 @@ class _RecoverPasswordPageState extends State<RecoverPasswordPage> {
     });
   }
 
-  Widget Step0() {
+  Widget stepZero() {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 40),
       constraints: const BoxConstraints(
@@ -114,63 +118,24 @@ class _RecoverPasswordPageState extends State<RecoverPasswordPage> {
       ),
       child: Column(
         children: [
-          const Text('Recuperação de senha', style: TextStyle(color: Colors.white, fontSize: 20),),
+          Text('Recuperação de senha', style: GoogleFonts.poppins(color: Colors.white, fontSize: 20),),
           const SizedBox(height: 30,),
-          const Text('Informe seu email abaixo e enviaremos um código de verificação para recuperar sua senha.', style: TextStyle(color: Colors.white, fontSize: 15),),
+          Text('Informe seu email abaixo e enviaremos um código de verificação para recuperar sua senha.', style: GoogleFonts.poppins(color: Colors.white, fontSize: 15),),
           const SizedBox(height: 30,),
           Form(
             child: Column(
               children: [
-                TextFormField(
-                  keyboardType: TextInputType.text,
-                  cursorColor: Colors.black54,
+                Input(
+                  fillColor: Colors.white.withOpacity(0.5),
                   controller: email,
-                  style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w400, color: AppColors.primary),
-                  decoration: InputDecoration(
-                    hintText: 'Informe seu email',
-                    hintStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.w400, color: Colors.white),
-                    fillColor: Colors.white.withOpacity(0.5),
-                    filled: true,
-                    counterText: '',
-                    contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-                    labelStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.w400),
-                    border: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 0,
-                          color: Colors.transparent,
-                        )
-                    ),
-                    enabledBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 0,
-                          color: Colors.transparent,
-                        )
-                    ),
-                    focusedBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 0,
-                          color: Colors.transparent,
-                        )
-                    ),
-                  ),
+                  hintText: 'Informe seu email',
+                  fontColor: AppColors.whiteSmoke,
+                  type: TextInputType.emailAddress
                 ),
                 const SizedBox(height: 40,),
-                MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: GestureDetector(
-                    child: Container(
-                      alignment: Alignment.center,
-                      padding: const EdgeInsets.symmetric(vertical: 10),
-                      decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.7),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: const Text('Próximo', style: TextStyle(fontSize: 20, color: Colors.white),),
-                    ),
-                    onTap: () {
-                      nextStep();
-                    },
-                  ),
+                Button(
+                  title: 'Próximo',
+                  onPressed: nextStep,
                 ),
               ],
             ),
@@ -180,7 +145,7 @@ class _RecoverPasswordPageState extends State<RecoverPasswordPage> {
     );
   }
 
-  Widget Step1() {
+  Widget stepOne() {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 40),
       constraints: const BoxConstraints(
@@ -192,70 +157,29 @@ class _RecoverPasswordPageState extends State<RecoverPasswordPage> {
       ),
       child: Column(
         children: [
-          const Text('Verificação do código', style: TextStyle(color: Colors.white, fontSize: 20),),
+          Text('Verificação do código', style: GoogleFonts.poppins(color: Colors.white, fontSize: 20),),
           const SizedBox(height: 30,),
-          const Text('Informe abaixo o código de verificação que enviamos ao seu email. Confira na caixa de entrada e spam.', style: TextStyle(color: Colors.white, fontSize: 15),),
+          Text('Informe abaixo o código de verificação que enviamos ao seu email. Confira na caixa de entrada e spam.', style: GoogleFonts.poppins(color: Colors.white, fontSize: 15),),
           const SizedBox(height: 30,),
           Form(
             child: Column(
               children: [
-                TextFormField(
-                  maxLength: 5,
-                  keyboardType: TextInputType.text,
-                  cursorColor: Colors.black54,
-                  controller: code,
+                Input(
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                    letterSpacing: 20,
-                    color: AppColors.primary,
-                  ),
-                  decoration: InputDecoration(
-                    hintText: '_ _ _ _ _',
-                    hintStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.w400, color: Colors.white, letterSpacing: 20),
-                    fillColor: Colors.white.withOpacity(0.5),
-                    filled: true,
-                    counterText: '',
-                    contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-                    labelStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.w400),
-                    border: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 0,
-                          color: Colors.transparent,
-                        )
-                    ),
-                    enabledBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 0,
-                          color: Colors.transparent,
-                        )
-                    ),
-                    focusedBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 0,
-                          color: Colors.transparent,
-                        )
-                    ),
-                  ),
+                  fillColor: Colors.white.withOpacity(0.5),
+                  controller: code,
+                  hintText: '_ _ _ _ _',
+                  fontColor: AppColors.whiteSmoke,
+                  type: TextInputType.text,
+                  fontSize: 18,
+                  textLetterSpacing: 20,
+                  textHintLetterSpacing: 20,
+                  maxLength: 5,
                 ),
                 const SizedBox(height: 40,),
-                MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: GestureDetector(
-                    child: Container(
-                      alignment: Alignment.center,
-                      padding: const EdgeInsets.symmetric(vertical: 10),
-                      decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.7),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: const Text('Próximo', style: TextStyle(fontSize: 20, color: Colors.white),),
-                    ),
-                    onTap: () {
-                      nextStep();
-                    },
-                  ),
+                Button(
+                  title: 'Próximo',
+                  onPressed: nextStep,
                 ),
               ],
             ),
@@ -265,7 +189,7 @@ class _RecoverPasswordPageState extends State<RecoverPasswordPage> {
     );
   }
 
-  Widget Step2() {
+  Widget stepTwo() {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 40),
       constraints: const BoxConstraints(
@@ -277,117 +201,40 @@ class _RecoverPasswordPageState extends State<RecoverPasswordPage> {
       ),
       child: Column(
         children: [
-          const Text('Redefinir senha', style: TextStyle(color: Colors.white, fontSize: 20),),
+          Text('Redefinir senha', style: GoogleFonts.poppins(color: Colors.white, fontSize: 20),),
           const SizedBox(height: 30,),
-          const Text('Informe abaixo sua nova senha e confirme ela antes de salvar.', style: TextStyle(color: Colors.white, fontSize: 15),),
+          Text('Informe abaixo sua nova senha e confirme ela antes de salvar.', style: GoogleFonts.poppins(color: Colors.white, fontSize: 15),),
           const SizedBox(height: 30,),
           Form(
             child: Column(
               children: [
-                TextFormField(
-                  obscureText: toggleNewPassword,
-                  keyboardType: TextInputType.visiblePassword,
-                  cursorColor: Colors.black54,
+                Input(
+                  isObscure: toggleNewPassword,
+                  fillColor: Colors.white.withOpacity(0.5),
                   controller: newPassword,
-                  style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w400, color: AppColors.primary),
-                  decoration: InputDecoration(
-                    suffixIcon: MouseRegion(
-                      cursor: SystemMouseCursors.click,
-                      child: GestureDetector(
-                        child: Icon(toggleNewPassword ? MdiIcons.eyeOff : MdiIcons.eye, size: 20, color: Colors.black54,),
-                        onTap: () {
-                          changeTogglePassword();
-                        },
-                      ),
-                    ),
-                    hintText: 'Nova senha',
-                    hintStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.w400, color: Colors.white),
-                    fillColor: Colors.white.withOpacity(0.5),
-                    filled: true,
-                    counterText: '',
-                    contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-                    labelStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.w400),
-                    border: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 0,
-                          color: Colors.transparent,
-                        )
-                    ),
-                    enabledBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 0,
-                          color: Colors.transparent,
-                        )
-                    ),
-                    focusedBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 0,
-                          color: Colors.transparent,
-                        )
-                    ),
-                  ),
+                  hintText: 'Nova senha',
+                  fontColor: AppColors.whiteSmoke,
+                  type: TextInputType.visiblePassword,
+                  hasSuffix: true,
+                  onTapSuffixIcon: changeTogglePassword,
+                  suffixIconData: toggleNewPassword ? MdiIcons.eyeOff : MdiIcons.eye,
                 ),
                 const SizedBox(height: 30,),
-                TextFormField(
-                  obscureText: toggleConfirmNewPassword,
-                  keyboardType: TextInputType.visiblePassword,
-                  cursorColor: Colors.black54,
+                Input(
+                  isObscure: toggleConfirmNewPassword,
+                  fillColor: Colors.white.withOpacity(0.5),
                   controller: confirmNewPassword,
-                  style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w400, color: AppColors.primary),
-                  decoration: InputDecoration(
-                    suffixIcon: MouseRegion(
-                      cursor: SystemMouseCursors.click,
-                      child: GestureDetector(
-                        child: Icon(toggleConfirmNewPassword ? MdiIcons.eyeOff : MdiIcons.eye, size: 20, color: Colors.black54,),
-                        onTap: () {
-                          changeToggleConfirmPassword();
-                        },
-                      ),
-                    ),
-                    hintText: 'Confirme sua senha',
-                    hintStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.w400, color: Colors.white),
-                    fillColor: Colors.white.withOpacity(0.5),
-                    filled: true,
-                    counterText: '',
-                    contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-                    labelStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.w400),
-                    border: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 0,
-                          color: Colors.transparent,
-                        )
-                    ),
-                    enabledBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 0,
-                          color: Colors.transparent,
-                        )
-                    ),
-                    focusedBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 0,
-                          color: Colors.transparent,
-                        )
-                    ),
-                  ),
+                  hintText: 'Confirme sua nova senha',
+                  fontColor: AppColors.whiteSmoke,
+                  type: TextInputType.visiblePassword,
+                  hasSuffix: true,
+                  onTapSuffixIcon: changeToggleConfirmPassword,
+                  suffixIconData: toggleConfirmNewPassword ? MdiIcons.eyeOff : MdiIcons.eye,
                 ),
                 const SizedBox(height: 30,),
-                MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: GestureDetector(
-                    child: Container(
-                      alignment: Alignment.center,
-                      padding: const EdgeInsets.symmetric(vertical: 10),
-                      decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.7),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: const Text('Salvar', style: TextStyle(fontSize: 20, color: Colors.white),),
-                    ),
-                    onTap: () {
-                      nextStep();
-                    },
-                  ),
+                Button(
+                  title: 'Salvar',
+                  onPressed: nextStep,
                 ),
               ],
             ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gestfin_web/utils/app_colors.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Footer extends StatelessWidget {
   const Footer({super.key});
@@ -19,7 +20,7 @@ class Footer extends StatelessWidget {
         ),
       ),
       height: 70,
-      child: const Text('Copyright © 2023 GestFin', style: TextStyle(color: AppColors.primary, fontSize: 15),),
+      child: Text('Copyright © 2023 GestFin', style: GoogleFonts.poppins(color: AppColors.primary, fontSize: 15),),
     );
   }
 }

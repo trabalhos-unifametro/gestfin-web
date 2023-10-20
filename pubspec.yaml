@@ -42,6 +42,7 @@ dependencies:
   shared_preferences: ^2.2.2
   dropdown_button2: ^2.3.9
   material_design_icons_flutter: ^7.0.7296
+  google_fonts: ^6.1.0
 
 dev_dependencies:
   flutter_test:

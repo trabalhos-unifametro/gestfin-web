@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gestfin_web/utils/app_colors.dart';
 import 'package:gestfin_web/widgets/base/BaseLayout.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class GoalsPage extends StatefulWidget {
   const GoalsPage({super.key});
@@ -28,15 +29,15 @@ class _GoalsPageState extends State<GoalsPage> {
                   fit: BoxFit.cover,
                 ),
               ),
-              child: const Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Text('Meus objetivos', style: TextStyle(fontSize: 25, color: AppColors.whiteSmoke, fontWeight: FontWeight.bold),),
-                  Text('Adicione objetivos, metas ou projeções que você deseja alcançar e informe o valor', style: TextStyle(fontSize: 18, color: AppColors.whiteSmoke),),
-                  Text('que deseja reservar por mês para este objetivo, e veja em quanto tempo você irá', style: TextStyle(fontSize: 18, color: AppColors.whiteSmoke),),
-                  Text('realizá-lo.', style: TextStyle(fontSize: 18, color: AppColors.whiteSmoke),)
+                  Text('Meus objetivos', style: GoogleFonts.poppins(fontSize: 25, color: AppColors.whiteSmoke, fontWeight: FontWeight.bold),),
+                  Text('Adicione objetivos, metas ou projeções que você deseja alcançar e informe o valor', style: GoogleFonts.poppins(fontSize: 18, color: AppColors.whiteSmoke),),
+                  Text('que deseja reservar por mês para este objetivo, e veja em quanto tempo você irá', style: GoogleFonts.poppins(fontSize: 18, color: AppColors.whiteSmoke),),
+                  Text('realizá-lo.', style: GoogleFonts.poppins(fontSize: 18, color: AppColors.whiteSmoke),)
                 ],
               ),
             ),

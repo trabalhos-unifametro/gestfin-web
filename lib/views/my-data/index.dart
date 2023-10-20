@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:gestfin_web/utils/app_colors.dart';
 import 'package:gestfin_web/widgets/base/BaseLayout.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
+import '../../widgets/components/button.dart';
 import '../../widgets/components/input.dart';
+import '../../widgets/components/select.dart';
 
 class MyDataPage extends StatefulWidget {
   const MyDataPage({super.key});
@@ -26,6 +29,12 @@ class _MyDataPageState extends State<MyDataPage> {
   bool editTel = false;
   bool editCell = false;
   bool editDate = false;
+  String? selectedValue;
+
+  final List<String> genders = [
+    'Masculino',
+    'Feminino'
+  ];
 
   void onTapInputName() {
     setState(() => editName = !editName);
@@ -33,10 +42,6 @@ class _MyDataPageState extends State<MyDataPage> {
 
   void onTapInputEmail() {
     setState(() => editEmail = !editEmail);
-  }
-
-  void onTapInputGender() {
-    setState(() => editGender = !editGender);
   }
 
   void onTapInputTel() {
@@ -49,6 +54,16 @@ class _MyDataPageState extends State<MyDataPage> {
 
   void onTapInputDate() {
     setState(() => editDate = !editDate);
+  }
+
+  void onTapSelectGender() {
+    setState(() => editGender = !editGender);
+  }
+
+  void onChangedSelectGender(String? value) {
+    setState(() {
+      selectedValue = value;
+    });
   }
 
   @override
@@ -68,12 +83,12 @@ class _MyDataPageState extends State<MyDataPage> {
                   fit: BoxFit.cover,
                 ),
               ),
-              child: const Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Text('Meus dados', style: TextStyle(fontSize: 25, color: AppColors.whiteSmoke, fontWeight: FontWeight.bold),),
+                  Text('Meus dados', style: GoogleFonts.poppins(fontSize: 25, color: AppColors.whiteSmoke, fontWeight: FontWeight.bold),),
                 ],
               ),
             ),
@@ -91,15 +106,15 @@ class _MyDataPageState extends State<MyDataPage> {
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: Form(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                        child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Row(
-                              children: [
-                                Flexible(
-                                  flex: 7,
-                                  child: Input(
+                            Flexible(
+                              flex: 8,
+                              child: Column(
+                                children: [
+                                  Input(
                                     fillColor: editName ? AppColors.whiteSmoke : Colors.black.withOpacity(0.5),
                                     isEnabled: editName,
                                     controller: name,
@@ -109,11 +124,60 @@ class _MyDataPageState extends State<MyDataPage> {
                                     onTapSuffixIcon: onTapInputName,
                                     suffixIconData: editName ? MdiIcons.checkAll : MdiIcons.pencil,
                                   ),
-                                ),
-                                const SizedBox(width: 30,),
-                                Flexible(
-                                  flex: 5,
-                                  child: Input(
+                                  const SizedBox(height: 30,),
+                                  Row(
+                                    children: [
+                                      Flexible(
+                                        flex: 3,
+                                        child: Select(
+                                          items: genders,
+                                          selectedValue: selectedValue,
+                                          hintText: 'Gênero',
+                                          onChanged: onChangedSelectGender,
+                                          hasSuffix: true,
+                                          suffixWithBorder: true,
+                                          onTapSuffixIcon: onTapSelectGender,
+                                          isEnabled: editGender,
+                                          fillColor: AppColors.whiteSmoke,
+                                          suffixIconData: editGender ? MdiIcons.checkAll : MdiIcons.pencil,
+                                        ),
+                                      ),
+                                      const SizedBox(width: 30,),
+                                      Flexible(
+                                        flex: 4,
+                                        child: Input(
+                                          fillColor: editCell ? AppColors.whiteSmoke : Colors.black.withOpacity(0.5),
+                                          isEnabled: editCell,
+                                          controller: cellphone,
+                                          hintText: '(00) 0 0000-0000',
+                                          hasSuffix: true,
+                                          suffixWithBorder: true,
+                                          onTapSuffixIcon: onTapInputCell,
+                                          suffixIconData: editCell ? MdiIcons.checkAll : MdiIcons.pencil,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 30,),
+                                  Input(
+                                    fillColor: editDate ? AppColors.whiteSmoke : Colors.black.withOpacity(0.5),
+                                    isEnabled: editDate,
+                                    controller: dateBirth,
+                                    hintText: 'Data de nascimento: DD/MM/AAAA',
+                                    hasSuffix: true,
+                                    suffixWithBorder: true,
+                                    onTapSuffixIcon: onTapInputDate,
+                                    suffixIconData: editDate ? MdiIcons.checkAll : MdiIcons.pencil,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(width: 30,),
+                            Flexible(
+                              flex: 4,
+                              child: Column(
+                                children: [
+                                  Input(
                                     fillColor: editEmail ? AppColors.whiteSmoke : Colors.black.withOpacity(0.5),
                                     isEnabled: editEmail,
                                     controller: email,
@@ -123,43 +187,8 @@ class _MyDataPageState extends State<MyDataPage> {
                                     onTapSuffixIcon: onTapInputEmail,
                                     suffixIconData: editEmail ? MdiIcons.checkAll : MdiIcons.pencil,
                                   ),
-                                )
-                              ],
-                            ),
-                            const SizedBox(height: 30,),
-                            Row(
-                              children: [
-                                Flexible(
-                                  flex: 3,
-                                  child: Input(
-                                    fillColor: editGender ? AppColors.whiteSmoke : Colors.black.withOpacity(0.5),
-                                    isEnabled: editGender,
-                                    controller: gender,
-                                    hintText: 'Gênero',
-                                    hasSuffix: true,
-                                    suffixWithBorder: true,
-                                    onTapSuffixIcon: onTapInputGender,
-                                    suffixIconData: editGender ? MdiIcons.checkAll : MdiIcons.pencil,
-                                  ),
-                                ),
-                                const SizedBox(width: 30,),
-                                Flexible(
-                                  flex: 4,
-                                  child: Input(
-                                    fillColor: editCell ? AppColors.whiteSmoke : Colors.black.withOpacity(0.5),
-                                    isEnabled: editCell,
-                                    controller: cellphone,
-                                    hintText: '(00) 0 0000-0000',
-                                    hasSuffix: true,
-                                    suffixWithBorder: true,
-                                    onTapSuffixIcon: onTapInputCell,
-                                    suffixIconData: editCell ? MdiIcons.checkAll : MdiIcons.pencil,
-                                  ),
-                                ),
-                                const SizedBox(width: 30,),
-                                Flexible(
-                                  flex: 5,
-                                  child: Input(
+                                  const SizedBox(height: 30,),
+                                  Input(
                                     fillColor: editTel ? AppColors.whiteSmoke : Colors.black.withOpacity(0.5),
                                     isEnabled: editTel,
                                     controller: telephone,
@@ -169,8 +198,12 @@ class _MyDataPageState extends State<MyDataPage> {
                                     onTapSuffixIcon: onTapInputTel,
                                     suffixIconData: editTel ? MdiIcons.checkAll : MdiIcons.pencil,
                                   ),
-                                )
-                              ],
+                                  const SizedBox(height: 30,),
+                                  const Button(
+                                    title: 'Redefinir minha senha'
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                         ),
