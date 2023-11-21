@@ -21,7 +21,18 @@ class User {
     this.dateBirth,
     this.salary,
     this.password
-});
+  });
+
+  User.fromJson(Map<String, dynamic> json) {
+    ID = json['id'];
+    name = json['name'];
+    email = json['email'];
+    gender = json['gender'];
+    cellphone = json['cellphone'];
+    telephone = json['telephone'];
+    dateBirth = DateTime.parse(json['date_birth']);
+    salary = json['salary'];
+  }
 }
 
 class RecoveryPassword {
@@ -36,4 +47,10 @@ class RecoveryPassword {
     this.confirmNewPassword,
     this.code
   });
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+
+    return data;
+  }
 }

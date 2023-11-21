@@ -1,10 +1,14 @@
-import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:gestfin_web/services/session.dart';
 import 'package:gestfin_web/utils/app_colors.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-
+import 'package:provider/provider.dart';
+import '../../providers/index.dart';
+import '../../services/authentication_service.dart';
+import '../../services/config.dart';
+import '../../utils/alerts.dart';
 import '../../widgets/components/button.dart';
 import '../../widgets/components/input.dart';
 import '../../widgets/components/select.dart';
@@ -27,14 +31,17 @@ class _LoginPageState extends State<LoginPage> {
   bool togglePassword = true;
   bool togglePasswordRegister = true;
   bool remember = false;
-
+  bool disabledBtn = false;
+  late AuthenticationService authService = AuthenticationService();
   final List<String> genders = [
     'Masculino',
     'Feminino'
   ];
+  late AppState appState;
 
   @override
   void initState() {
+    appState = Provider.of<AppState>(context, listen: false);
     super.initState();
   }
 
@@ -77,6 +84,42 @@ class _LoginPageState extends State<LoginPage> {
     setState(() {
       selectedValue = value;
     });
+  }
+
+  void changeDisabledBtnLogin(bool value) {
+    setState(() {
+      disabledBtn = value;
+    });
+  }
+
+  void logIn() async {
+    changeDisabledBtnLogin(true);
+    if (email.text.isNotEmpty && password.text.isNotEmpty) {
+      await authService.login(email.text, password.text).
+      then((Response res) async {
+        if (res.type == TypeResponse.success) {
+          Session.save(res.response['token'], res.response['name']).then((value) {
+            if (value) {
+              appState.setUsername(res.response['name']);
+              appState.setIsLoggedIn(true);
+              context.go('/');
+            } else {
+              Alert.show(context, "Ocorreu um erro!", type: TypeAlert.error);
+            }
+            changeDisabledBtnLogin(false);
+          });
+        } else {
+          Alert.show(context, res.response, type: TypeAlert.error);
+          changeDisabledBtnLogin(false);
+        }
+      }).catchError((_) {
+        Alert.show(context, "Ocorreu um erro!", type: TypeAlert.error);
+        changeDisabledBtnLogin(false);
+      });
+    } else {
+      Alert.show(context, "Informe suas credenciais para prosseguir!", type: TypeAlert.error);
+      changeDisabledBtnLogin(false);
+    }
   }
 
   @override
@@ -174,7 +217,7 @@ class _LoginPageState extends State<LoginPage> {
                                         MouseRegion(
                                           cursor: SystemMouseCursors.click,
                                           child: GestureDetector(
-                                            child: Text('Lembrar de mim.', style: GoogleFonts.poppins(fontSize: 16, color: Colors.white),),
+                                            child: Text('Lembrar de mim.', style: GoogleFonts.poppins(fontSize: 12, color: Colors.white),),
                                             onTap: () {
                                               setState(() {
                                                 remember = !remember;
@@ -187,7 +230,7 @@ class _LoginPageState extends State<LoginPage> {
                                     MouseRegion(
                                       cursor: SystemMouseCursors.click,
                                       child: GestureDetector(
-                                        child: Text('Esqueceu sua senha?', style: GoogleFonts.poppins(fontSize: 16, color: Colors.white),),
+                                        child: Text('Esqueceu sua senha?', style: GoogleFonts.poppins(fontSize: 12, color: Colors.white),),
                                         onTap: () {
                                           context.go('/auth/recuperar-senha');
                                         },
@@ -196,8 +239,12 @@ class _LoginPageState extends State<LoginPage> {
                                   ],
                                 ),
                                 const SizedBox(height: 40,),
-                                const Button(
-                                  title: 'Entrar',
+                                Button(
+                                  disabled: disabledBtn,
+                                  onPressed: () {
+                                    logIn();
+                                  },
+                                  title: disabledBtn ? 'Aguarde...' : 'Entrar',
                                 ),
                               ],
                             ),

@@ -5,8 +5,10 @@ import 'package:gestfin_web/utils/app_colors.dart';
 import 'package:gestfin_web/widgets/base/Footer.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:provider/provider.dart';
+import '../../providers/index.dart';
 import '../../services/session.dart';
+import '../../utils/alerts.dart';
 
 class BaseLayout extends StatefulWidget {
   Widget body;
@@ -25,12 +27,15 @@ class _BaseLayoutState extends State<BaseLayout> {
   ];
   final List<int> indexes = [0, 1, 2];
   String? selectedValue;
-  Session session = Session();
+  bool isLoggedIn = false;
+  late AppState appState;
 
   @override
   void initState() {
+    appState = Provider.of<AppState>(context, listen: false);
     super.initState();
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +62,8 @@ class _BaseLayoutState extends State<BaseLayout> {
                   },
                 ),
               ),
-              signInOrRegister()
+              if (appState.isLoggedIn == true) menuOptions()
+              else signInOrRegister()
             ],
           ),
         ),
@@ -91,11 +97,16 @@ class _BaseLayoutState extends State<BaseLayout> {
         context.go('/redefinir-senha');
         break;
       case 2:
-        session.destroy()
+        Session.destroy()
         .then((value) {
           if (value) {
+            appState.setIsLoggedIn(false);
             context.go('/auth/login');
+          } else {
+            Alert.show(context, 'Ocorreu um erro ao tentar encerrar essa sessão.', type: TypeAlert.error);
           }
+        }).catchError((_) {
+          Alert.show(context, 'Ocorreu algum erro ao tentar encerrar essa sessão.', type: TypeAlert.error);
         });
         break;
       default:
@@ -167,8 +178,10 @@ class _BaseLayoutState extends State<BaseLayout> {
         ),
         DropdownButtonHideUnderline(
           child: DropdownButton2<int>(
+            alignment: Alignment.center,
             isExpanded: true,
-            hint: Text('NOME DO USUÁRIO AQUI',
+            hint: Text(appState.username,
+              textAlign: TextAlign.center,
               style: GoogleFonts.poppins(
                 textStyle: const TextStyle(overflow: TextOverflow.ellipsis,),
                 fontSize: 15,
@@ -179,7 +192,7 @@ class _BaseLayoutState extends State<BaseLayout> {
                 decorationColor: AppColors.whiteSmoke,
                 decoration: TextDecoration.underline,
                 decorationThickness: 2,
-                color: Colors.transparent
+                color: Colors.transparent,
               ),
             ),
             items: indexes.map((int i) => DropdownMenuItem<int>(
@@ -199,7 +212,7 @@ class _BaseLayoutState extends State<BaseLayout> {
             buttonStyleData: const ButtonStyleData(
               padding: EdgeInsets.symmetric(horizontal: 0),
               height: 40,
-              width: 200,
+              width: 180,
             ),
             menuItemStyleData: const MenuItemStyleData(
               height: 40,

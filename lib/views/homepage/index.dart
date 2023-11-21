@@ -12,7 +12,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   bool hoverBtn1 = false;
   bool hoverBtn2 = false;
 

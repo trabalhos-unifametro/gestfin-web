@@ -1,28 +1,43 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Session {
-  Future<bool> save(String token) async {
+  static Future<bool> save(String token, String username) async {
     final prefs = await SharedPreferences.getInstance();
-    bool isSaved = false;
-    prefs.setString('token', token)
-    .then((value) => isSaved = value);
+    bool isSavedToken = false;
+    bool isSavedUsername = false;
+    isSavedToken = await prefs.setString('token', token);
+    isSavedUsername = await prefs.setString('username', username);
 
-    return isSaved;
+    return isSavedToken && isSavedUsername;
   }
 
-  Future<bool> destroy() async {
+  static Future<bool> destroy() async {
     final prefs = await SharedPreferences.getInstance();
     bool isDestroyed = false;
-    prefs.remove('token')
-    .then((value) => isDestroyed = value);
+    isDestroyed = await prefs.remove('token');
+    await prefs.remove('username');
 
     return isDestroyed;
   }
 
-  Future<bool> isLoggedIn(String token) async {
+  static Future<bool> isLoggedIn() async {
     final prefs = await SharedPreferences.getInstance();
     String? token = prefs.getString('token');
 
     return (token != null && token.isNotEmpty);
+  }
+
+  static Future<String?> getUsername() async {
+    final prefs = await SharedPreferences.getInstance();
+    String? username = prefs.getString('username');
+
+    return username;
+  }
+
+  static Future<String> getToken() async {
+    final prefs = await SharedPreferences.getInstance();
+    String? token = prefs.getString('token');
+
+    return token ?? '';
   }
 }

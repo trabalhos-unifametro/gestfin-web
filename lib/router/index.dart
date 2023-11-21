@@ -1,5 +1,6 @@
 import 'package:gestfin_web/views/expenses/index.dart';
 import 'package:go_router/go_router.dart';
+import '../services/session.dart';
 import '../views/auth/login.dart';
 import '../views/auth/recover_password.dart';
 import '../views/basic-method/index.dart';
@@ -10,6 +11,8 @@ import '../views/homepage/investment_market.dart';
 import '../views/investment-suggestions/index.dart';
 import '../views/my-data/change_password.dart';
 import '../views/my-data/index.dart';
+import '../views/testes/cripto_2.dart';
+import '../views/testes/teste1.dart';
 
 
 final router = GoRouter(
@@ -59,12 +62,25 @@ final router = GoRouter(
           path: 'redefinir-senha',
           builder: (context, state) => const ChangePasswordPage(),
         ),
+        GoRoute(
+          name: 'Teste1',
+          path: 'teste-1',
+          builder: (context, state) => Teste1(),
+        ),
+        GoRoute(
+          name: 'CryptoPricesScreen',
+          path: 'teste-2',
+          builder: (context, state) => CryptoPricesScreen(),
+        ),
     ]
     ),
     GoRoute(
       name: 'AuthPages',
       path: '/auth',
-      redirect: (context, state) {
+      redirect: (context, state) async {
+        if (await Session.isLoggedIn()) {
+          return '/';
+        }
         return state.fullPath;
       },
       routes: [

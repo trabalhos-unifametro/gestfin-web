@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:gestfin_web/services/user_service.dart';
 import 'package:gestfin_web/utils/app_colors.dart';
 import 'package:gestfin_web/widgets/base/BaseLayout.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
+import '../../models/auth.dart';
+import '../../services/config.dart';
 import '../../widgets/components/button.dart';
 import '../../widgets/components/input.dart';
 import '../../widgets/components/select.dart';
@@ -30,11 +33,27 @@ class _MyDataPageState extends State<MyDataPage> {
   bool editCell = false;
   bool editDate = false;
   String? selectedValue;
-
   final List<String> genders = [
     'Masculino',
     'Feminino'
   ];
+
+  @override
+  void initState() {
+    getMyData();
+    super.initState();
+  }
+
+  Future<void> getMyData() async {
+    Response data = await UserService().findMyData();
+    User user = User.fromJson(data.response);
+    name.text = user.name ?? '';
+    gender.text = user.gender ?? '';
+    email.text = user.email ?? '';
+    cellphone.text = user.cellphone ?? '';
+    telephone.text = user.telephone ?? '';
+    dateBirth.text = user.dateBirth.toString() ?? '';
+  }
 
   void onTapInputName() {
     setState(() => editName = !editName);
