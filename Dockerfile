@@ -1,34 +1,51 @@
-#Stage 1 - Install dependencies and build the app in a build environment
+# Environemnt to install flutter and build web
 FROM debian:bullseye-slim AS build-env
-# Install flutter dependencies
+
+# install all needed stuff
 RUN apt-get update
-RUN apt-get install -y curl git wget unzip libgconf-2-4 gdb libstdc++6 libglu1-mesa fonts-droid-fallback lib32stdc++6 python3
-RUN apt-get clean
+RUN apt-get install -y curl git unzip
 
-# download Flutter SDK from Flutter Github repo
-RUN git clone https://github.com/flutter/flutter.git /usr/local/flutter
+# define variables
+ARG FLUTTER_SDK=/usr/local/flutter
+ARG FLUTTER_VERSION=3.13.7
+ARG APP=/app/
 
-# Set flutter environment path
-ENV PATH="/usr/local/flutter/bin:/usr/local/flutter/bin/cache/dart-sdk/bin:${PATH}"
+#clone flutter
+RUN git clone https://github.com/flutter/flutter.git $FLUTTER_SDK
+# change dir to current flutter folder and make a checkout to the specific version
+RUN cd $FLUTTER_SDK && git fetch && git checkout $FLUTTER_VERSION
 
-# Run flutter doctor
-RUN flutter doctor
+# setup the flutter path as an enviromental variable
+ENV PATH="$FLUTTER_SDK/bin:$FLUTTER_SDK/bin/cache/dart-sdk/bin:${PATH}"
 
-# Enable flutter web
-RUN flutter channel master
-RUN flutter upgrade
-RUN flutter config --enable-web
+# Start to run Flutter commands
+# doctor to see if all was installes ok
+RUN flutter doctor -v
 
-# Copy files to container and build
-RUN mkdir /app/
-COPY . /app/
-WORKDIR /app/
+# create folder to copy source code
+RUN mkdir $APP
+# copy source code to folder
+COPY . $APP
+# stup new folder as the working directory
+WORKDIR $APP
+
+# Run build: 1 - clean, 2 - pub get, 3 - build web
+RUN flutter clean
+RUN flutter pub get
 RUN flutter build web
 
-# Record the exposed port
-EXPOSE 8080
+# Copy static files from assets to build/web
+RUN mkdir -p $APP/build/web/assets/images
+RUN cp -r $APP/assets/images/* $APP/build/web/assets/images/
 
-# make server startup script executable and start the web server
-RUN ["chmod", "+x", "/app/server/server.sh"]
+# once heare the app will be compiled and ready to deploy
 
-ENTRYPOINT [ "/app/server/server.sh"]
+# use nginx to deploy
+FROM nginx:1.25.2-alpine
+
+# copy the info of the builded web app to nginx
+COPY --from=build-env /app/build/web /usr/share/nginx/html
+
+# Expose and run nginx
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
