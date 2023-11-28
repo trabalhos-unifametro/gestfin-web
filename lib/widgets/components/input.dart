@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:gestfin_web/utils/app_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -19,6 +20,7 @@ class Input extends StatefulWidget {
   final double? textHintLetterSpacing;
   final double? textLetterSpacing;
   final TextAlign textAlign;
+  final List<TextInputFormatter>? inputFormatters;
 
   const Input({
     super.key,
@@ -37,7 +39,8 @@ class Input extends StatefulWidget {
     this.maxLength,
     this.textHintLetterSpacing,
     this.textLetterSpacing,
-    this.textAlign = TextAlign.start
+    this.textAlign = TextAlign.start,
+    this.inputFormatters
   });
 
   @override
@@ -92,6 +95,7 @@ class _InputState extends State<Input> {
                 )
             ),
           ),
+          inputFormatters: widget.inputFormatters,
         ),
         if (widget.hasSuffix) Positioned(
           right: 0,

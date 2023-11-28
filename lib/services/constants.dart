@@ -12,3 +12,4 @@ const routeLogin = '/auth/signin';
 
 // USER ROUTES
 const routeUserMyData = '/user/my_data';
+const routeUserUpdateByColumn = '/user/update_by_column';

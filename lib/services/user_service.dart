@@ -9,4 +9,10 @@ class UserService {
       return res;
     });
   }
+
+  Future<Response> updateUserByColumn(String column, dynamic newValue) async {
+    return await api.put(routeUserUpdateByColumn, { "new_value": newValue, "column": column }).then((dynamic res){
+      return res;
+    });
+  }
 }
