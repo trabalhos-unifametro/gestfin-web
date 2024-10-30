@@ -40456,7 +40456,7 @@ q=A.br(e,A.dK(i,B.r,B.bR,B.cR),B.k,e,e,e,j,e,l,q.b)}else q=l
 c=A.ew(q,e,e,B.aC,!0,d,e,e,B.ae)
 if(a.al(t.U2)==null){d=f.a
 d=d.z
-c=A.kf(B.c_,A.a([c,A.np(8,d==null?A.br(e,e,B.k,e,e,B.AG,1,e,e,e):d,e,e,0,0,e,e)],t.p),B.a3,B.bA,e)}d=A.aw(t.Q)
+c=A.kf(B.c_,A.a([c,A.np(8,d==null?A.br(e,e,B.k,e,e,B.AJ,1,e,e,e):d,e,e,0,0,e,e)],t.p),B.a3,B.bA,e)}d=A.aw(t.Q)
 if(!f.glr())d.G(0,B.y)
 g=A.cZ(B.i6,d,t.Pb)
 f.a.toString
@@ -41228,7 +41228,7 @@ qn(a,b){return B.f}}
 A.XY.prototype={}
 A.Jc.prototype={
 I(a){var s=null,r=A.b0(a,B.bb,t.w).w.r.b+8,q=this.c.Y(0,new A.i(8,r)),p=A.bf(this.d,B.r,B.A,B.cR),o=$.ad().Sv(20,20,B.dO),n=B.Ey.cs(a),m=new A.aT(B.Eu.cs(a),1,B.v,-1)
-return new A.cg(new A.ay(8,r,8,8),new A.i9(new A.JD(q),A.br(s,A.ay9(A.tc(new A.cg(B.FN,p,s),new A.bx(n,s,new A.cD(m,m,m,m),B.fl,s,s,s,B.E),B.cn),o),B.a3,s,s,B.AJ,s,s,s,222),s),s)}}
+return new A.cg(new A.ay(8,r,8,8),new A.i9(new A.JD(q),A.br(s,A.ay9(A.tc(new A.cg(B.FN,p,s),new A.bx(n,s,new A.cD(m,m,m,m),B.fl,s,s,s,B.E),B.cn),o),B.a3,s,s,B.AK,s,s,s,222),s),s)}}
 A.oW.prototype={
 a6(){return new A.Du()}}
 A.Du.prototype={
@@ -81396,7 +81396,7 @@ case 3:return A.J(null,r)}})
 return A.K($async$yW,r)},
 I(a){var s,r,q,p,o,n,m,l,k,j,i=this,h=null,g="Informe seu email",f=t.w,e=A.b0(a,h,f).w,d=A.b0(a,h,f).w
 f=A.b0(a,h,f).w
-f=A.br(B.K,A.d7(A.d4(h,A.av6("images/png/logo.png",B.ck,220),B.I,!1,h,h,h,h,h,h,h,h,h,h,h,h,new A.an8(a),h,h,h),B.aa,h,h,h,h),B.k,B.w,h,h,h,h,B.mI,f.a.a)
+f=A.br(B.K,A.d7(A.d4(h,A.av6("assets/images/png/logo.png",B.ck,220),B.I,!1,h,h,h,h,h,h,h,h,h,h,h,h,new A.an8(a),h,h,h),B.aa,h,h,h,h),B.k,B.w,h,h,h,h,B.mI,f.a.a)
 s=A.e4(5)
 r=A.ae("Entre",h,h,h,A.av().$2$color$fontSize(B.j,20),h,h)
 q=B.d.a7(127.5)
@@ -81513,7 +81513,7 @@ s.aE()},
 I(a){var s,r,q,p,o,n,m,l,k=this,j=null,i=t.w,h=A.b0(a,j,i).w,g=A.b0(a,j,i).w
 i=A.b0(a,j,i).w
 s=t.p
-i=A.a([A.br(B.K,A.d7(A.d4(j,A.av6("images/png/logo.png",B.ck,220),B.I,!1,j,j,j,j,j,j,j,j,j,j,j,j,new A.aoM(a),j,j,j),B.aa,j,j,j,j),B.k,B.w,j,j,j,j,B.mI,i.a.a),B.PG],s)
+i=A.a([A.br(B.K,A.d7(A.d4(j,A.av6("assets/images/png/logo.png",B.ck,220),B.I,!1,j,j,j,j,j,j,j,j,j,j,j,j,new A.aoM(a),j,j,j),B.aa,j,j,j,j),B.k,B.w,j,j,j,j,B.mI,i.a.a),B.PG],s)
 r=k.y
 if(r===0){r=A.e4(5)
 i.push(A.br(j,A.bf(A.a([A.ae("Recupera\xe7\xe3o de senha",j,j,j,A.av().$2$color$fontSize(B.j,20),j,j),B.bm,A.ae("Informe seu email abaixo e enviaremos um c\xf3digo de verifica\xe7\xe3o para recuperar sua senha.",j,j,j,A.av().$2$color$fontSize(B.j,15),j,j),B.bm,A.tx(A.bf(A.a([A.eH(k.d,A.O(B.d.a7(127.5),255,255,255),B.o,15,!1,"Informe seu email",j,!0,!1,j,j,j,!1,B.a4,j,j,B.kR),B.f5,A.IB(!1,k.gGW(),"Pr\xf3ximo")],s),B.r,B.A,B.m))],s),B.r,B.A,B.m),B.k,j,B.iw,new A.bx(B.di,j,j,r,j,j,j,B.E),j,j,B.jk,j))}else if(r===1){r=A.e4(5)
@@ -81556,22 +81556,22 @@ A.oF.prototype={
 a6(){return new A.Q4()}}
 A.Q4.prototype={
 I(a){var s=null,r=A.b0(a,s,t.w).w,q=t.p
-return new A.hn(A.bf(A.a([A.br(s,A.bf(A.a([A.ae("50%, 30% e 20%",s,s,s,A.av().$3$color$fontSize$fontWeight(B.o,25,B.a9),s,s),A.ae("Conhe\xe7a aqui o m\xe9todo 50, 30, 20, que serve para auxiliar na organiza\xe7\xe3o do seu",s,s,s,A.av().$2$color$fontSize(B.o,18),s,s),A.ae("or\xe7amento.",s,s,s,A.av().$2$color$fontSize(B.o,18),s,s)],q),B.an,B.a0,B.m),B.k,s,B.c1,B.AH,s,s,B.c5,r.a.a)],q),B.r,B.A,B.m),s)}}
+return new A.hn(A.bf(A.a([A.br(s,A.bf(A.a([A.ae("50%, 30% e 20%",s,s,s,A.av().$3$color$fontSize$fontWeight(B.o,25,B.a9),s,s),A.ae("Conhe\xe7a aqui o m\xe9todo 50, 30, 20, que serve para auxiliar na organiza\xe7\xe3o do seu",s,s,s,A.av().$2$color$fontSize(B.o,18),s,s),A.ae("or\xe7amento.",s,s,s,A.av().$2$color$fontSize(B.o,18),s,s)],q),B.an,B.a0,B.m),B.k,s,B.c1,B.AL,s,s,B.c5,r.a.a)],q),B.r,B.A,B.m),s)}}
 A.pa.prototype={
 a6(){return new A.RS()}}
 A.RS.prototype={
 I(a){var s=null,r=A.b0(a,s,t.w).w,q=t.p
-return new A.hn(A.bf(A.a([A.br(s,A.bf(A.a([A.ae("Organizar despesas",s,s,s,A.av().$3$color$fontSize$fontWeight(B.o,25,B.a9),s,s),A.ae("Adicione primeiro a m\xe9dia de dinheiro que voc\xea recebe todo m\xeas e logo ap\xf3s,",s,s,s,A.av().$2$color$fontSize(B.o,18),s,s),A.ae("adicione as despesas mensais, tais como, conta de luz, \xe1gua, telefone e etc.",s,s,s,A.av().$2$color$fontSize(B.o,18),s,s)],q),B.an,B.a0,B.m),B.k,s,B.c1,B.AI,s,s,B.c5,r.a.a)],q),B.r,B.A,B.m),s)}}
+return new A.hn(A.bf(A.a([A.br(s,A.bf(A.a([A.ae("Organizar despesas",s,s,s,A.av().$3$color$fontSize$fontWeight(B.o,25,B.a9),s,s),A.ae("Adicione primeiro a m\xe9dia de dinheiro que voc\xea recebe todo m\xeas e logo ap\xf3s,",s,s,s,A.av().$2$color$fontSize(B.o,18),s,s),A.ae("adicione as despesas mensais, tais como, conta de luz, \xe1gua, telefone e etc.",s,s,s,A.av().$2$color$fontSize(B.o,18),s,s)],q),B.an,B.a0,B.m),B.k,s,B.c1,B.AH,s,s,B.c5,r.a.a)],q),B.r,B.A,B.m),s)}}
 A.ps.prototype={
 a6(){return new A.Sl()}}
 A.Sl.prototype={
 I(a){var s=null,r=A.b0(a,s,t.w).w,q=t.p
-return new A.hn(A.bf(A.a([A.br(s,A.bf(A.a([A.ae("Meus objetivos",s,s,s,A.av().$3$color$fontSize$fontWeight(B.o,25,B.a9),s,s),A.ae("Adicione objetivos, metas ou proje\xe7\xf5es que voc\xea deseja alcan\xe7ar e informe o valor",s,s,s,A.av().$2$color$fontSize(B.o,18),s,s),A.ae("que deseja reservar por m\xeas para este objetivo, e veja em quanto tempo voc\xea ir\xe1",s,s,s,A.av().$2$color$fontSize(B.o,18),s,s),A.ae("realiz\xe1-lo.",s,s,s,A.av().$2$color$fontSize(B.o,18),s,s)],q),B.an,B.a0,B.m),B.k,s,B.c1,B.AK,s,s,B.c5,r.a.a)],q),B.r,B.A,B.m),s)}}
+return new A.hn(A.bf(A.a([A.br(s,A.bf(A.a([A.ae("Meus objetivos",s,s,s,A.av().$3$color$fontSize$fontWeight(B.o,25,B.a9),s,s),A.ae("Adicione objetivos, metas ou proje\xe7\xf5es que voc\xea deseja alcan\xe7ar e informe o valor",s,s,s,A.av().$2$color$fontSize(B.o,18),s,s),A.ae("que deseja reservar por m\xeas para este objetivo, e veja em quanto tempo voc\xea ir\xe1",s,s,s,A.av().$2$color$fontSize(B.o,18),s,s),A.ae("realiz\xe1-lo.",s,s,s,A.av().$2$color$fontSize(B.o,18),s,s)],q),B.an,B.a0,B.m),B.k,s,B.c1,B.AN,s,s,B.c5,r.a.a)],q),B.r,B.A,B.m),s)}}
 A.ox.prototype={
 a6(){return new A.Pu()}}
 A.Pu.prototype={
 I(a){var s,r,q,p,o=null,n=t.w,m=A.b0(a,o,n).w,l=t.p
-m=A.br(o,A.bf(A.a([A.ae("Sobre a GESTFIN",o,o,o,A.av().$3$color$fontSize$fontWeight(B.o,25,B.a9),o,o),A.ae("Aqui voc\xea ir\xe1 conhecer melhor quem \xe9 a GestFin e qual \xe9 a nossa miss\xe3o.",o,o,o,A.av().$2$color$fontSize(B.o,18),o,o)],l),B.an,B.a0,B.m),B.k,o,B.c1,B.AN,o,o,B.c5,m.a.a)
+m=A.br(o,A.bf(A.a([A.ae("Sobre a GESTFIN",o,o,o,A.av().$3$color$fontSize$fontWeight(B.o,25,B.a9),o,o),A.ae("Aqui voc\xea ir\xe1 conhecer melhor quem \xe9 a GestFin e qual \xe9 a nossa miss\xe3o.",o,o,o,A.av().$2$color$fontSize(B.o,18),o,o)],l),B.an,B.a0,B.m),B.k,o,B.c1,B.AI,o,o,B.c5,m.a.a)
 s=A.ae("Quem somos?",o,o,o,A.av().$1$fontSize(22),o,o)
 r=A.b0(a,o,n).w
 q=A.e4(5)
@@ -81595,13 +81595,13 @@ q=A.a([B.mr,m.e?A.O(242,11,11,9):B.F],q)
 q=A.dK(A.a([new A.ei(1,B.b4,r,l),B.f4,new A.ei(1,B.b4,A.d7(A.d4(l,A.br(l,A.dK(A.a([A.bf(A.a([A.ae("Pre\xe7os de a\xe7\xf5es, criptos e varia\xe7\xf5es",l,l,l,A.av().$2$color$fontSize(B.o,18),l,l),A.ae("Aqui voc\xea ir\xe1 poder ver as pirncipais a\xe7\xf5es, criptos e as",l,l,l,A.av().$2$color$fontSize(B.o,15),l,l),A.ae("varia\xe7\xf5es em tempo real.",l,l,l,A.av().$2$color$fontSize(B.o,15),l,l)],j),B.an,B.A,B.m),B.nf],j),B.r,B.bR,B.m),B.k,l,l,new A.bx(l,l,l,s,l,new A.pL(B.is,B.fi,B.dO,q,B.nE,l),l,B.E),l,l,B.mK,l),B.I,!1,l,l,l,l,l,l,l,l,l,l,l,l,new A.am6(a),l,l,l),B.aa,l,l,new A.am7(m),new A.am8(m)),l)],j),B.r,B.bR,B.m)
 s=A.ae("Nossos servi\xe7os",l,l,l,A.av().$3$color$fontSize$fontWeight(B.F,20,B.a9),l,l)
 r=A.e4(5)
-r=A.d7(A.d4(l,A.br(l,A.bf(A.a([A.ae("Organizar despesas",l,l,l,A.av().$3$color$fontSize$fontWeight(B.o,18,B.a9),B.ba,l),B.yM,A.ae("Aqui voc\xea ir\xe1 definir suas despesas do m\xeas, e ter\xe1 uma vis\xe3o e dicas de como se organizar melhor.",l,l,l,A.av().$3$color$fontSize$fontWeight(B.o,14,B.bN),B.ba,l)],j),B.r,B.a0,B.m),B.k,l,l,new A.bx(B.F,B.EK,l,r,l,l,l,B.E),200,l,B.eo,l),B.I,!1,l,l,l,l,l,l,l,l,l,l,l,l,new A.am9(a),l,l,l),B.aa,l,l,l,l)
+r=A.d7(A.d4(l,A.br(l,A.bf(A.a([A.ae("Organizar despesas",l,l,l,A.av().$3$color$fontSize$fontWeight(B.o,18,B.a9),B.ba,l),B.yM,A.ae("Aqui voc\xea ir\xe1 definir suas despesas do m\xeas, e ter\xe1 uma vis\xe3o e dicas de como se organizar melhor.",l,l,l,A.av().$3$color$fontSize$fontWeight(B.o,14,B.bN),B.ba,l)],j),B.r,B.a0,B.m),B.k,l,l,new A.bx(B.F,B.EN,l,r,l,l,l,B.E),200,l,B.eo,l),B.I,!1,l,l,l,l,l,l,l,l,l,l,l,l,new A.am9(a),l,l,l),B.aa,l,l,l,l)
 p=A.e4(5)
-p=A.d7(A.d4(l,A.br(l,A.bf(A.a([A.ae("Meus objetivos",l,l,l,A.av().$3$color$fontSize$fontWeight(B.o,18,B.a9),B.ba,l),B.dM,A.ae("Aqui voc\xea ir\xe1 definir seus objetivos financeiros, e de acordo com seu perfil, vamos calcular o melhor caminho para alcan\xe7\xe1-lo.",l,l,l,A.av().$3$color$fontSize$fontWeight(B.o,14,B.bN),B.ba,l)],j),B.r,B.a0,B.m),B.k,l,l,new A.bx(B.F,B.EL,l,p,l,l,l,B.E),200,l,B.eo,l),B.I,!1,l,l,l,l,l,l,l,l,l,l,l,l,new A.ama(a),l,l,l),B.aa,l,l,l,l)
+p=A.d7(A.d4(l,A.br(l,A.bf(A.a([A.ae("Meus objetivos",l,l,l,A.av().$3$color$fontSize$fontWeight(B.o,18,B.a9),B.ba,l),B.dM,A.ae("Aqui voc\xea ir\xe1 definir seus objetivos financeiros, e de acordo com seu perfil, vamos calcular o melhor caminho para alcan\xe7\xe1-lo.",l,l,l,A.av().$3$color$fontSize$fontWeight(B.o,14,B.bN),B.ba,l)],j),B.r,B.a0,B.m),B.k,l,l,new A.bx(B.F,B.EO,l,p,l,l,l,B.E),200,l,B.eo,l),B.I,!1,l,l,l,l,l,l,l,l,l,l,l,l,new A.ama(a),l,l,l),B.aa,l,l,l,l)
 o=A.e4(5)
-o=A.d7(A.d4(l,A.br(l,A.bf(A.a([A.ae("Sugest\xf5es de investimento",l,l,l,A.av().$3$color$fontSize$fontWeight(B.o,18,B.a9),B.ba,l),B.dM,A.ae("Aqui vamos nos basear no seu perfil para encontrarmos os melhores investimentos de acordo com o seu gosto.",l,l,l,A.av().$3$color$fontSize$fontWeight(B.o,14,B.bN),B.ba,l)],j),B.r,B.a0,B.m),B.k,l,l,new A.bx(B.F,B.EM,l,o,l,l,l,B.E),200,l,B.eo,l),B.I,!1,l,l,l,l,l,l,l,l,l,l,l,l,new A.amb(a),l,l,l),B.aa,l,l,l,l)
+o=A.d7(A.d4(l,A.br(l,A.bf(A.a([A.ae("Sugest\xf5es de investimento",l,l,l,A.av().$3$color$fontSize$fontWeight(B.o,18,B.a9),B.ba,l),B.dM,A.ae("Aqui vamos nos basear no seu perfil para encontrarmos os melhores investimentos de acordo com o seu gosto.",l,l,l,A.av().$3$color$fontSize$fontWeight(B.o,14,B.bN),B.ba,l)],j),B.r,B.a0,B.m),B.k,l,l,new A.bx(B.F,B.EP,l,o,l,l,l,B.E),200,l,B.eo,l),B.I,!1,l,l,l,l,l,l,l,l,l,l,l,l,new A.amb(a),l,l,l),B.aa,l,l,l,l)
 n=A.e4(5)
-return new A.hn(A.bf(A.a([k,new A.cg(B.fL,A.bf(A.a([q,new A.cg(B.Fz,s,l),A.dK(A.a([new A.ei(1,B.b4,r,l),B.f4,new A.ei(1,B.b4,p,l),B.f4,new A.ei(1,B.b4,o,l),B.f4,new A.ei(1,B.b4,A.d7(A.d4(l,A.br(l,A.bf(A.a([A.ae("50%, 30% e 20%",l,l,l,A.av().$3$color$fontSize$fontWeight(B.o,18,B.a9),B.ba,l),B.dM,A.ae("Conhe\xe7a aqui o m\xe9todo 50, 30, 20, que serve para auxiliar na organiza\xe7\xe3o do seu or\xe7amento.",l,l,l,A.av().$3$color$fontSize$fontWeight(B.o,14,B.bN),B.ba,l)],j),B.r,B.a0,B.m),B.k,l,l,new A.bx(B.F,B.EN,l,n,l,l,l,B.E),200,l,B.eo,l),B.I,!1,l,l,l,l,l,l,l,l,l,l,l,l,new A.amc(a),l,l,l),B.aa,l,l,l,l),l)],j),B.r,B.bR,B.m)],j),B.an,B.A,B.m),l)],j),B.r,B.A,B.m),l)}}
+return new A.hn(A.bf(A.a([k,new A.cg(B.fL,A.bf(A.a([q,new A.cg(B.Fz,s,l),A.dK(A.a([new A.ei(1,B.b4,r,l),B.f4,new A.ei(1,B.b4,p,l),B.f4,new A.ei(1,B.b4,o,l),B.f4,new A.ei(1,B.b4,A.d7(A.d4(l,A.br(l,A.bf(A.a([A.ae("50%, 30% e 20%",l,l,l,A.av().$3$color$fontSize$fontWeight(B.o,18,B.a9),B.ba,l),B.dM,A.ae("Conhe\xe7a aqui o m\xe9todo 50, 30, 20, que serve para auxiliar na organiza\xe7\xe3o do seu or\xe7amento.",l,l,l,A.av().$3$color$fontSize$fontWeight(B.o,14,B.bN),B.ba,l)],j),B.r,B.a0,B.m),B.k,l,l,new A.bx(B.F,B.EQ,l,n,l,l,l,B.E),200,l,B.eo,l),B.I,!1,l,l,l,l,l,l,l,l,l,l,l,l,new A.amc(a),l,l,l),B.aa,l,l,l,l),l)],j),B.r,B.bR,B.m)],j),B.an,B.A,B.m),l)],j),B.r,B.A,B.m),l)}}
 A.am5.prototype={
 $1(a){var s=this.a
 s.a1(new A.am1(s))},
@@ -81653,12 +81653,12 @@ a6(){var s=null,r="Valor de mercado",q="Moeda 1",p="R$ 100.000.000,00",o="R$ 63,
 return new A.SO(A.a(["Moeda",r,r,"Pre\xe7o R$ (P/ uni.)"],t.s),A.a([A.a([A.ae(q,s,s,s,A.av().$2$color$fontSize(B.F,12),s,s),A.ae(p,s,s,s,A.av().$2$color$fontSize(B.F,12),s,s),A.ae(o,s,s,s,A.av().$2$color$fontSize(B.F,12),s,s),A.dK(A.a([A.ae(n,s,s,s,A.av().$2$color$fontSize(B.bG,12),s,s),B.dL,A.hw(B.fe,B.bG,s,15)],m),B.r,B.a0,B.m)],m),A.a([A.ae(q,s,s,s,A.av().$2$color$fontSize(B.F,12),s,s),A.ae(p,s,s,s,A.av().$2$color$fontSize(B.F,12),s,s),A.ae(o,s,s,s,A.av().$2$color$fontSize(B.F,12),s,s),A.dK(A.a([A.ae(n,s,s,s,A.av().$2$color$fontSize(B.bG,12),s,s),B.dL,A.hw(B.fe,B.bG,s,15)],m),B.r,B.a0,B.m)],m),A.a([A.ae(q,s,s,s,A.av().$2$color$fontSize(B.F,12),s,s),A.ae(p,s,s,s,A.av().$2$color$fontSize(B.F,12),s,s),A.ae(o,s,s,s,A.av().$2$color$fontSize(B.F,12),s,s),A.dK(A.a([A.ae(n,s,s,s,A.av().$2$color$fontSize(B.bG,12),s,s),B.dL,A.hw(B.fe,B.bG,s,15)],m),B.r,B.a0,B.m)],m),A.a([A.ae(q,s,s,s,A.av().$2$color$fontSize(B.F,12),s,s),A.ae(p,s,s,s,A.av().$2$color$fontSize(B.F,12),s,s),A.ae(o,s,s,s,A.av().$2$color$fontSize(B.F,12),s,s),A.dK(A.a([A.ae(n,s,s,s,A.av().$2$color$fontSize(B.bG,12),s,s),B.dL,A.hw(B.fe,B.bG,s,15)],m),B.r,B.a0,B.m)],m),A.a([A.ae(q,s,s,s,A.av().$2$color$fontSize(B.F,12),s,s),A.ae(p,s,s,s,A.av().$2$color$fontSize(B.F,12),s,s),A.ae(o,s,s,s,A.av().$2$color$fontSize(B.F,12),s,s),A.dK(A.a([A.ae(n,s,s,s,A.av().$2$color$fontSize(B.bG,12),s,s),B.dL,A.hw(B.fe,B.bG,s,15)],m),B.r,B.a0,B.m)],m),A.a([A.ae("Moeda 2",s,s,s,A.av().$2$color$fontSize(B.F,12),s,s),A.ae("R$ 105.000.000,00",s,s,s,A.av().$2$color$fontSize(B.F,12),s,s),A.ae("R$ 87,11",s,s,s,A.av().$2$color$fontSize(B.F,12),s,s),A.dK(A.a([A.ae("- 3,76%",s,s,s,A.av().$2$color$fontSize(B.mu,12),s,s),B.dL,A.hw(B.WN,B.mu,s,15)],m),B.r,B.a0,B.m)],m)],t.hT))}}
 A.SO.prototype={
 I(a){var s=null,r=A.b0(a,s,t.w).w,q=t.p
-return new A.hn(A.bf(A.a([A.br(s,A.bf(A.a([A.ae("Criptomoedas e A\xe7\xf5es",s,s,s,A.av().$3$color$fontSize$fontWeight(B.o,25,B.a9),s,s),A.ae("Aqui voc\xea ir\xe1 poder ver as pirncipais a\xe7\xf5es, criptos e as varia\xe7\xf5es em tempo real.",s,s,s,A.av().$2$color$fontSize(B.o,18),s,s)],q),B.an,B.a0,B.m),B.k,s,B.c1,B.AM,s,s,B.c5,r.a.a),new A.cg(B.fL,A.bf(A.a([A.ae("Principais criptomoedas",s,s,s,A.av().$1$fontSize(22),s,s),B.dM,new A.Cb(this.d,this.e,s)],q),B.an,B.A,B.m),s)],q),B.an,B.A,B.m),s)}}
+return new A.hn(A.bf(A.a([A.br(s,A.bf(A.a([A.ae("Criptomoedas e A\xe7\xf5es",s,s,s,A.av().$3$color$fontSize$fontWeight(B.o,25,B.a9),s,s),A.ae("Aqui voc\xea ir\xe1 poder ver as pirncipais a\xe7\xf5es, criptos e as varia\xe7\xf5es em tempo real.",s,s,s,A.av().$2$color$fontSize(B.o,18),s,s)],q),B.an,B.a0,B.m),B.k,s,B.c1,B.AG,s,s,B.c5,r.a.a),new A.cg(B.fL,A.bf(A.a([A.ae("Principais criptomoedas",s,s,s,A.av().$1$fontSize(22),s,s),B.dM,new A.Cb(this.d,this.e,s)],q),B.an,B.A,B.m),s)],q),B.an,B.A,B.m),s)}}
 A.pC.prototype={
 a6(){return new A.SN()}}
 A.SN.prototype={
 I(a){var s=null,r=A.b0(a,s,t.w).w,q=t.p
-return new A.hn(A.bf(A.a([A.br(s,A.bf(A.a([A.ae("Sugest\xf5es de investimento",s,s,s,A.av().$3$color$fontSize$fontWeight(B.o,25,B.a9),s,s),A.ae("Aqui vamos nos basear no seu perfil para encontrarmos os melhores investimentos",s,s,s,A.av().$2$color$fontSize(B.o,18),s,s),A.ae("de acordo com o seu gosto.",s,s,s,A.av().$2$color$fontSize(B.o,18),s,s)],q),B.an,B.a0,B.m),B.k,s,B.c1,B.AL,s,s,B.c5,r.a.a)],q),B.r,B.A,B.m),s)}}
+return new A.hn(A.bf(A.a([A.br(s,A.bf(A.a([A.ae("Sugest\xf5es de investimento",s,s,s,A.av().$3$color$fontSize$fontWeight(B.o,25,B.a9),s,s),A.ae("Aqui vamos nos basear no seu perfil para encontrarmos os melhores investimentos",s,s,s,A.av().$2$color$fontSize(B.o,18),s,s),A.ae("de acordo com o seu gosto.",s,s,s,A.av().$2$color$fontSize(B.o,18),s,s)],q),B.an,B.a0,B.m),B.k,s,B.c1,B.AM,s,s,B.c5,r.a.a)],q),B.r,B.A,B.m),s)}}
 A.oM.prototype={
 a6(){var s=$.ak()
 return new A.Dg(new A.dm(B.ap,s),new A.dm(B.ap,s),new A.dm(B.ap,s))}}
@@ -82130,7 +82130,7 @@ this.aM()},
 I(a){var s,r,q,p,o=this,n=null,m=o.d
 if(m===$)m=o.d=100
 s=t.p
-r=A.a([A.d7(A.d4(n,A.av6("images/png/logo.png",B.ck,220),B.I,!1,n,n,n,n,n,n,n,n,n,n,n,n,new A.aj9(a),n,n,n),B.aa,n,n,n,n)],s)
+r=A.a([A.d7(A.d4(n,A.av6("assets/images/png/logo.png",B.ck,220),B.I,!1,n,n,n,n,n,n,n,n,n,n,n,n,new A.aj9(a),n,n,n),B.aa,n,n,n,n)],s)
 q=o.x
 q===$&&A.b()
 if(q.a)r.push(o.alh())
@@ -88046,43 +88046,43 @@ B.AE=new A.al(0,550,0,1/0)
 B.iw=new A.al(0,450,0,1/0)
 B.AF=new A.al(0,900,0,1/0)
 B.lJ=new A.al(1/0,1/0,1/0,1/0)
-B.A2=new A.es("images/png/banner-homepage.png",null,null)
+B.zX=new A.es("assets/images/png/banner-criptos.png",null,null)
 B.ck=new A.a_U(2,"cover")
 B.c9=new A.tK(3,"noRepeat")
 B.bK=new A.pd(2,"medium")
-B.EJ=new A.ev(B.A2)
+B.EL=new A.ev(B.zX)
 B.E=new A.Ix(0,"rectangle")
-B.ix=new A.bx(null,B.EJ,null,null,null,null,null,B.E)
-B.A7=new A.es("images/png/background-auth.png",null,null)
-B.EG=new A.ev(B.A7)
-B.lK=new A.bx(null,B.EG,null,null,null,null,null,B.E)
+B.AG=new A.bx(null,B.EL,null,null,null,null,null,B.E)
+B.A2=new A.es("assets/images/png/banner-despesas.png",null,null)
+B.ER=new A.ev(B.A2)
+B.AH=new A.bx(null,B.ER,null,null,null,null,null,B.E)
+B.A0=new A.es("assets/images/png/banner-sobre.png",null,null)
+B.EK=new A.ev(B.A0)
+B.AI=new A.bx(null,B.EK,null,null,null,null,null,B.E)
 B.mo=new A.k(4290624957)
 B.Au=new A.aT(B.mo,0,B.v,-1)
 B.Av=new A.cD(B.u,B.u,B.Au,B.u)
-B.AG=new A.bx(null,null,B.Av,null,null,null,null,B.E)
-B.A0=new A.es("images/png/banner-metodo-basico.png",null,null)
-B.ER=new A.ev(B.A0)
-B.AH=new A.bx(null,B.ER,null,null,null,null,null,B.E)
-B.zY=new A.es("images/png/banner-despesas.png",null,null)
-B.EH=new A.ev(B.zY)
-B.AI=new A.bx(null,B.EH,null,null,null,null,null,B.E)
+B.AJ=new A.bx(null,null,B.Av,null,null,null,null,B.E)
+B.A_=new A.es("assets/images/png/background-auth.png",null,null)
+B.EG=new A.ev(B.A_)
+B.lK=new A.bx(null,B.EG,null,null,null,null,null,B.E)
 B.CF=new A.k(1006632960)
 B.tR=new A.i(0,4)
 B.AU=new A.bp(0.5,B.N,B.CF,B.tR,10)
 B.Ji=A.a(s([B.AU]),t.E)
-B.AJ=new A.bx(null,null,null,B.fl,B.Ji,null,null,B.E)
-B.zX=new A.es("images/png/banner-objetivos.png",null,null)
-B.EI=new A.ev(B.zX)
-B.AK=new A.bx(null,B.EI,null,null,null,null,null,B.E)
-B.A_=new A.es("images/png/banner-investimentos.png",null,null)
-B.EP=new A.ev(B.A_)
-B.AL=new A.bx(null,B.EP,null,null,null,null,null,B.E)
-B.A1=new A.es("images/png/banner-criptos.png",null,null)
-B.EO=new A.ev(B.A1)
-B.AM=new A.bx(null,B.EO,null,null,null,null,null,B.E)
-B.zZ=new A.es("images/png/banner-sobre.png",null,null)
-B.EQ=new A.ev(B.zZ)
-B.AN=new A.bx(null,B.EQ,null,null,null,null,null,B.E)
+B.AK=new A.bx(null,null,null,B.fl,B.Ji,null,null,B.E)
+B.zY=new A.es("assets/images/png/banner-homepage.png",null,null)
+B.EI=new A.ev(B.zY)
+B.ix=new A.bx(null,B.EI,null,null,null,null,null,B.E)
+B.zZ=new A.es("assets/images/png/banner-metodo-basico.png",null,null)
+B.EJ=new A.ev(B.zZ)
+B.AL=new A.bx(null,B.EJ,null,null,null,null,null,B.E)
+B.A1=new A.es("assets/images/png/banner-investimentos.png",null,null)
+B.EM=new A.ev(B.A1)
+B.AM=new A.bx(null,B.EM,null,null,null,null,null,B.E)
+B.A3=new A.es("assets/images/png/banner-objetivos.png",null,null)
+B.EH=new A.ev(B.A3)
+B.AN=new A.bx(null,B.EH,null,null,null,null,null,B.E)
 B.dd=new A.Iv(0,"tight")
 B.lL=new A.Iv(5,"strut")
 B.lM=new A.Ix(1,"circle")
@@ -88538,14 +88538,14 @@ B.mD=new A.oY(2,"initializedServices")
 B.EE=new A.oY(3,"initializingUi")
 B.EF=new A.oY(4,"initialized")
 B.Xz=new A.a1C(1,"traversalOrder")
-B.A3=new A.es("images/png/bkg-card-service-1.png",null,null)
-B.EK=new A.ev(B.A3)
-B.A4=new A.es("images/png/bkg-card-service-2.png",null,null)
-B.EL=new A.ev(B.A4)
-B.A5=new A.es("images/png/bkg-card-service-3.png",null,null)
-B.EM=new A.ev(B.A5)
-B.A6=new A.es("images/png/bkg-card-service-4.png",null,null)
-B.EN=new A.ev(B.A6)
+B.A4=new A.es("assets/images/png/bkg-card-service-1.png",null,null)
+B.EN=new A.ev(B.A4)
+B.A5=new A.es("assets/images/png/bkg-card-service-2.png",null,null)
+B.EO=new A.ev(B.A5)
+B.A6=new A.es("assets/images/png/bkg-card-service-3.png",null,null)
+B.EP=new A.ev(B.A6)
+B.A7=new A.es("assets/images/png/bkg-card-service-4.png",null,null)
+B.EQ=new A.ev(B.A7)
 B.cn=new A.Jr(0,"background")
 B.ES=new A.Jr(1,"foreground")
 B.ET=new A.Jt(!1)
