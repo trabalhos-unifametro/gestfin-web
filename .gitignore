@@ -1,9 +1,5 @@
 .flutter-plugins
 .flutter-plugins-dependencies
-flutter.js
-flutter_bootstrap.js
-flutter_service_worker.js
-version.json
+build
 .dart_tool
 .idea
-canvaskit
