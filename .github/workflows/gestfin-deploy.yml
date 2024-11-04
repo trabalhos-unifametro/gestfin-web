@@ -1,28 +1,34 @@
-name: Flutter Web Deploy
+name: Deploy to GitHub Pages
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
+  deploy:
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: 'stable'
 
-      - name: Install dependencies
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '3.24.x'
+
+      - name: Enable Flutter Web
+        run: flutter config --enable-web
+
+      - name: Download Dependencies
         run: flutter pub get
 
-      - name: Build for web
-        run: flutter build web --base-href="/gestfin-web/" --release
+      - name: Build
+        run: flutter build web
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: build/web
+          publish_dir: ./build/web
+          force_orphan: true
+          commit_message: 'Publish to gh-pages'
